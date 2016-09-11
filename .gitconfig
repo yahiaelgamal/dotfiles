@@ -4,7 +4,7 @@
 
 [core]
   editor = /usr/bin/vim
-  excludesfile = /Users/yahiaelgamal/.gitignore_global
+  excludesfile = ~/.gitignore_global
   quotepath = false # to ignore quoting unicode characters
   ignorecase = false
   autoclrf = input
