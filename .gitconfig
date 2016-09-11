@@ -22,9 +22,6 @@
 [mergetool]
   tool = vimdiff
 
-[https]
-  proxy = https://yahia.el-gamal:Za3bola!@50.0.0.5:8080
-
 [alias]
   co = checkout
   b = branch
@@ -37,5 +34,6 @@
   bb = "!git for-each-ref --sort='-authordate' --format='%(authordate)%09%(objectname:short)%09%(refname)' refs/heads | sed -e 's-refs/heads/--'"
   dw = diff --color-words='\\w+|[^[:space:]]'
   dcw = diff --cached --color-words='\\w+|[^[:space:]]'
+
 [credential]
 	helper = osxkeychain
