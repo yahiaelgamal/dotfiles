@@ -18,7 +18,8 @@ Plugin 'yahiaelgamal/vim-airline'
 Plugin 'godlygeek/tabular'
 Plugin 'The-NERD-Commenter'
 Plugin 'ctrlp.vim'
-Plugin 'ervandew/supertab'
+"Plugin 'ervandew/supertab'
+Plugin 'vim-scripts/AutoComplPop'
 Plugin 'matze/vim-move'
 Plugin 'scrooloose/nerdtree'
 Plugin 'scrooloose/syntastic'
@@ -393,7 +394,12 @@ let g:syntastic_mode_map = { 'mode': 'passive',
 
 
 " Super tab configuration
-"let g:SuperTabDefaultCompletionType =
+" let g:SuperTabDefaultCompletionType = "<c-x><c-u>" " omni
+
+" Auto Completion Config
+set completeopt=longest,menuone
+" show completion while typing
+inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<C-g>u\<Tab>" 
 
 " Black hole deletion/change (persist yanked lines in non-visual mode)
 nnoremap d "_d
@@ -405,8 +411,7 @@ nnoremap x "_x
 nnoremap X "_X
 
 
-
-set omnifunc=syntaxcomplete#Complete
+"set omnifunc=syntaxcomplete#Complete
 "let g:pymode_lint = 0
 "let g:pymode_lint_message = 0
 
