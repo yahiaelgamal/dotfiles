@@ -1,74 +1,80 @@
-filetype off                   " required!
+set nocompatible              " be iMproved, required
+filetype off                  " required
 
-set rtp+=~/.vim/bundle/vundle/
-call vundle#rc()
+" set the runtime path to include Vundle and initialize
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+" alternatively, pass a path where Vundle should install plugins
+"call vundle#begin('~/some/path/here')
 
-" let Vundle manage Vundle
-" required!
-Bundle 'gmarik/vundle'
+" let Vundle manage Vundle, required
+Plugin 'VundleVim/Vundle.vim'
 
-" My Bundles here:
+" The following are examples of different formats supported.
+" Keep Plugin commands between vundle#begin/end.
 "
-" original repos on github
-" Bundle 'rstacruz/sparkup', {'rtp': 'vim/'}
-
 " vim-scripts repos
-Bundle 'yahiaelgamal/vim-airline'
-Bundle 'godlygeek/tabular'
-Bundle 'The-NERD-Commenter'
-Bundle 'ctrlp.vim'
-" Bundle 'ervandew/supertab'
-Bundle 'Valloric/YouCompleteMe'
-Bundle 'matze/vim-move'
-Bundle 'scrooloose/nerdtree'
-Bundle 'scrooloose/syntastic'
-Bundle 'digitaltoad/vim-pug'
-"Bundle 'tpope/vim-endwise' " problem with delimitMate
-
-"Bundle 'tpope/vim-fugitive'
-"Bundle 'tpope/vim-rails'
-Bundle 'tpope/vim-surround'
-Bundle 'klen/python-mode'
-"Bundle 'jalvesaq/R-Vim-runtime'
-"Bundle 'Vim-R-plugin'
-"Bundle 'pangloss/vim-javascript'
-"Bundle 'ervandew/snipmate.vim'
-Bundle 'Raimondi/delimitMate'
-Bundle 'bkad/CamelCaseMotion'
-"Bundle 'ervandew/screen'
-Bundle 'benmills/vimux'
-
-
-"Bundle 'Lokaltog/vim-easymotion'
-"Bundle 'NERD_Tree-and-ack'
-"Bundle 'airblade/vim-gitgutter'
-Bundle 'bling/vim-bufferline'
-"Bundle 'mileszs/ack.vim'
-"Bundle 'tpope/vim-dispatch'
+Plugin 'yahiaelgamal/vim-airline'
+Plugin 'godlygeek/tabular'
+Plugin 'The-NERD-Commenter'
+Plugin 'ctrlp.vim'
+Plugin 'ervandew/supertab'
+Plugin 'matze/vim-move'
+Plugin 'scrooloose/nerdtree'
+Plugin 'scrooloose/syntastic'
+""Plugin 'tpope/vim-endwise' " problem with delimitMate
 "
-"Bundle 'xolox/vim-session'
-"Bundle 'vim-misc'
+"Plugin 'tpope/vim-fugitive'
+"Plugin 'tpope/vim-rails'
+Plugin 'tpope/vim-surround'
+"Plugin 'klen/python-mode'
+"Plugin 'jalvesaq/R-Vim-runtime'
+"Plugin 'Vim-R-plugin'
+"Plugin 'pangloss/vim-javascript'
+"Plugin 'ervandew/snipmate.vim'
+"Plugin 'Raimondi/delimitMate'
+"Plugin 'bkad/CamelCaseMotion'
+""Plugin 'ervandew/screen'
+"Plugin 'benmills/vimux'
+
+
+"Plugin 'Lokaltog/vim-easymotion'
+"Plugin 'NERD_Tree-and-ack'
+"Plugin 'airblade/vim-gitgutter'
+"Plugin 'bling/vim-bufferline'
+"Plugin 'mileszs/ack.vim'
+"Plugin 'tpope/vim-dispatch'
+"
+"Plugin 'xolox/vim-session'
+"Plugin 'vim-misc'
 
 " colors
-Bundle 'chriskempson/vim-tomorrow-theme'
-Bundle 'Lucius'
-"Bundle "daylerees/colour-schemes", { "rtp": "vim/" }
+Plugin 'chriskempson/vim-tomorrow-theme'
+Plugin 'jonathanfilip/vim-lucius'
+"Plugin "daylerees/colour-schemes", { "rtp": "vim/" }
+" The sparkup vim script is in a subdirectory of this repo called vim.
+" Pass the path to set the runtimepath properly.
+Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
+" Install L9 and avoid a Naming conflict if you've already installed a
+" different version somewhere else.
+Plugin 'ascenator/L9', {'name': 'newL9'}
 
-filetype plugin indent on     " required!
-
+" All of your Plugins must be added before the following line
+call vundle#end()            " required
+filetype plugin indent on    " required
+" To ignore plugin indent changes, instead use:
+"filetype plugin on
+"
 " Brief help
-" :BundleList          - list configured bundles
-" :BundleInstall(!)    - install(update) bundles
-" :BundleSearch(!) foo - search(or refresh cache first) for foo
-" :BundleClean(!)      - confirm(or auto-approve) removal of unused bundles
+" :PluginList       - lists configured plugins
+" :PluginInstall    - installs plugins; append `!` to update or just :PluginUpdate
+" :PluginSearch foo - searches for foo; append `!` to refresh local cache
+" :PluginClean      - confirms removal of unused plugins; append `!` to auto-approve removal
 "
 " see :h vundle for more details or wiki for FAQ
-" NOTE: comments after Bundle command are not allowed..
-" Really?
+" Put your non-Plugin stuff after this line
 
-" =============== VUNDLER END ==============
-
-
+colorscheme Tomorrow-Night
 
 set nocompatible   " be IMproved
 set bs=2           " backspace should work as we expect it to
@@ -131,7 +137,6 @@ set incsearch  " show the first match already while I type
 set ignorecase
 set smartcase  " only be case-sensitive if I use uppercase in my query
 set hlsearch " I Don't hate when half of the text lights up
-
 set virtualedit=block  " make selection better not bounded to end of lines
 
 " show chars that cannot be displayed as <13> instead of ^M
@@ -145,7 +150,7 @@ set ttyfast "fast terminal connection
 
 set nowrap " don't wrap lines
 
-"set nowrapscan " don't cycle when searching
+set nowrapscan " don't cycle when searching
 
 " I would rather depend on git
 set nobackup
@@ -202,7 +207,6 @@ function! TEXSET()
 endfunction
 
 function! RMDSET()
-  " needs a tmux session to be open in the right directory
   nnoremap K :call VimuxRunCommand(RUN_RMARKDOWN())<CR>
   nnoremap KK :call VimuxRunCommand(OPEN_HTML())<CR>
   " if selection, put stuff in @r and run it, and move the cursor oneline
@@ -258,8 +262,6 @@ inoremap <C-a> <C-o>^
 " }}}
 " =============================================================================
 
-"colorscheme Tomorrow-Night-Bright
-colorscheme Tomorrow-Night
 
 filetype indent on " Don't remember what it does
 filetype plugin on " Don't remember what it does
@@ -373,22 +375,21 @@ nnoremap K  k
 imap <D-M>  %>% 
 imap <D-N>  %<>% 
 
+
 " Set filetype to be text for new buffers
 autocmd BufEnter * if &filetype == "" | setlocal ft=txt | endif
+autocmd BufEnter * if &filetype == "hql" | setlocal ft=sql | endif
 
 " Syntastic
 let g:syntastic_ruby_checkers = ['mri', 'rubocop']
 "let g:syntastic_python_checkers = ['pylint', 'pyfalkes']
 "let g:syntastic_mode_map = { 'mode': 'active',
                            "\ 'passive_filetypes': ['ruby', 'java'] }
-                           "
-let g:syntastic_enable_r_lintr_checker = 1
-let g:syntastic_r_checkers = ['lintr']
-
-let g:syntastic_javascript_checkers = ['eslint'] 
+"let g:syntastic_javascript_checkers = ['jshint', 'jslint']
 let g:syntastic_mode_map = { 'mode': 'passive',
                            \ 'active_filetypes': [],
                            \ 'passive_filetypes': [] }
+
 
 
 " Super tab configuration
@@ -411,17 +412,25 @@ set omnifunc=syntaxcomplete#Complete
 
 
 " Change cursor to single line instead of a box in terminal
-let &t_SI = "\<Esc>]50;CursorShape=1\x7" 
-let &t_EI = "\<Esc>]50;CursorShape=0\x7"
+
+if !exists('$TMUX')
+  let &t_SI = "\<Esc>]50;CursorShape=1\x7"
+  let &t_EI = "\<Esc>]50;CursorShape=0\x7"
+else
+  let &t_SI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=1\x7\<Esc>\\"
+  let &t_EI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=0\x7\<Esc>\\"
+endif
+autocmd InsertEnter * set cul
+autocmd InsertLeave * set nocul
 
 " Stuff for r
-"let vimrplugin_assign = 0 " make underscore not convert to ->
+let vimrplugin_assign = 0 " make underscore not convert to ->
 
 
 " Delimter
 let delimitMate_expand_cr = 1
 let delimitMate_expand_space = 1
-" let g:SuperTabCrMapping = 0 " fix the problem
+"let g:SuperTabCrMapping = 0 " fix the problem
 
 " session
 "let g:session_autosave_periodic = 1
@@ -457,25 +466,4 @@ set nosol
 " why use shift if you can ignore it
 nnoremap ; :
 
-
-" to make use of YouCompleteMe, doesn't work
-let g:snips_trigger_key = '<tab>'
-let g:snips_trigger_key_backwards = '<s-tab>'
-
-let g:snips_trigger_key = '<D-/>'
-let g:snips_trigger_key_backwards = '<D-?>'
-
-" change vim-move to command
-let g:move_key_modifier = 'D'
-
-
-" Blacklist 
-let g:ycm_filetype_blacklist = {
-      \ 'json' : 1,
-      \ 'markdown' : 1,
-      \}
-
-set guifont=Monoid:h13
-
-" The thing that hangs python files
-let g:pymode_rope_lookup_project = 0
+set guifont=Monoid:h11
