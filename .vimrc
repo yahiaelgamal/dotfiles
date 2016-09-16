@@ -23,7 +23,8 @@ Plugin 'vim-scripts/AutoComplPop'
 Plugin 'matze/vim-move'
 Plugin 'scrooloose/nerdtree'
 Plugin 'scrooloose/syntastic'
-""Plugin 'tpope/vim-endwise' " problem with delimitMate
+Plugin 'autowitch/hive.vim'
+"Plugin 'tpope/vim-endwise' " problem with delimitMate
 "
 "Plugin 'tpope/vim-fugitive'
 "Plugin 'tpope/vim-rails'
@@ -33,7 +34,7 @@ Plugin 'tpope/vim-surround'
 "Plugin 'Vim-R-plugin'
 "Plugin 'pangloss/vim-javascript'
 "Plugin 'ervandew/snipmate.vim'
-"Plugin 'Raimondi/delimitMate'
+Plugin 'Raimondi/delimitMate'
 "Plugin 'bkad/CamelCaseMotion'
 ""Plugin 'ervandew/screen'
 "Plugin 'benmills/vimux'
@@ -249,6 +250,11 @@ autocmd FileType text   call TXTSET()
 autocmd FileType tex    call TEXSET()
 autocmd FileType rmd    call RMDSET()
 autocmd FileType r      call RSET()
+
+" for .hql files
+au BufNewFile,BufRead *.hql set filetype=hive expandtab
+" for .q files
+au BufNewFile,BufRead *.q set filetype=hive expandtab
 
 
 
