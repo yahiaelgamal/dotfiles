@@ -1,4 +1,4 @@
-colorscheme Tomorrow-Night
+colorscheme Tomorrow
 "
 "colorscheme delek
 "set bg=light
