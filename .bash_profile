@@ -43,7 +43,6 @@ function hide_hfiles() {
   kill `ps aux | g [F]inder | awk '{ print $2 }'`;
 }
 
-# takes first argument the password
 function set_proxy() {
   read -s -p "Enter Username: " username
   read -s -p "Enter Password: " password
