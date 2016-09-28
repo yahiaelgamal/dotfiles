@@ -22,7 +22,7 @@ Plugin 'ctrlp.vim'
 Plugin 'vim-scripts/AutoComplPop'
 Plugin 'matze/vim-move'
 Plugin 'scrooloose/nerdtree'
-Plugin 'scrooloose/syntastic'
+Plugin 'snrooloose/syntastic'
 Plugin 'autowitch/hive.vim'
 "Plugin 'tpope/vim-endwise' " problem with delimitMate
 "
@@ -33,7 +33,7 @@ Plugin 'tpope/vim-surround'
 "Plugin 'jalvesaq/R-Vim-runtime'
 "Plugin 'Vim-R-plugin'
 "Plugin 'pangloss/vim-javascript'
-"Plugin 'ervandew/snipmate.vim'
+Plugin 'ervandew/snipmate.vim'
 Plugin 'Raimondi/delimitMate'
 "Plugin 'bkad/CamelCaseMotion'
 ""Plugin 'ervandew/screen'
@@ -248,8 +248,8 @@ autocmd FileType ruby   call RUBYSET()
 autocmd FileType eruby  call RUBYSET()
 autocmd FileType text   call TXTSET()
 autocmd FileType tex    call TEXSET()
-autocmd FileType rmd    call RMDSET()
-autocmd FileType r      call RSET()
+"autocmd FileType rmd    call RMDSET()
+"autocmd FileType r      call RSET()
 
 " for .hql files
 au BufNewFile,BufRead *.hql set filetype=hive expandtab
@@ -298,6 +298,7 @@ nnoremap // :noh<cr>
 " Get out of insert mode fast
 inoremap jj <ESC>
 
+" Back to the previous buffer
 nnoremap <C-Space> <C-^>
 
 
@@ -337,11 +338,20 @@ function! FilenameCopyFullPath()
   let @*= expand("%:p")
 endfunction
 
+function! RmdCopyRender()
+  let @*= 'render("' . expand("%f") . '")'
+endfunction
+
+
+
+command! FilenameCopy call FilenameCopy()
+command! FilenameCopyFullPath call FilenameCopyFullPath()
 
 noremap <leader>f :call FilenameCopy() <CR>
 noremap <leader>F :call FilenameCopyFullPath() <CR>
-command! FilenameCopy call FilenameCopy()
-command! FilenameCopyFullPath call FilenameCopyFullPath()
+
+command! RmdCopyRender call RmdCopyRender()
+noremap <leader>rf :call RmdCopyRender() <CR>
 
 " airline config
 let g:airline_left_sep=''
@@ -379,8 +389,8 @@ cabbrev E e
 nnoremap K  k
 
 " The pipe
-imap <D-M>  %>% 
-imap <D-N>  %<>% 
+imap <D-M>  %>%
+imap <D-N>  %<>%
 
 
 " Set filetype to be text for new buffers
@@ -405,7 +415,7 @@ let g:syntastic_mode_map = { 'mode': 'passive',
 " Auto Completion Config
 set completeopt=longest,menuone
 " show completion while typing
-inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<C-g>u\<Tab>" 
+"inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<C-g>u\<Tab>"
 
 " Black hole deletion/change (persist yanked lines in non-visual mode)
 nnoremap d "_d
@@ -431,8 +441,8 @@ else
   let &t_SI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=1\x7\<Esc>\\"
   let &t_EI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=0\x7\<Esc>\\"
 endif
-autocmd InsertEnter * set cul
-autocmd InsertLeave * set nocul
+"autocmd InsertEnter * set cul
+"autocmd InsertLeave * set nocul
 
 " Stuff for r
 let vimrplugin_assign = 0 " make underscore not convert to ->
@@ -476,5 +486,8 @@ set nosol
 
 " why use shift if you can ignore it
 nnoremap ; :
+
+" Move modifier, doesn't work for some reason
+let g:move_key_modifier = 'A'
 
 set guifont=Monoid:h11
