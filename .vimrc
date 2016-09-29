@@ -389,8 +389,8 @@ cabbrev E e
 nnoremap K  k
 
 " The pipe
-imap <D-M>  %>%
-imap <D-N>  %<>%
+imap <D-M> %>%
+imap <D-N> %<>%
 
 
 " Set filetype to be text for new buffers
