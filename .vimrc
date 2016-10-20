@@ -37,7 +37,7 @@ Plugin 'ervandew/snipmate.vim'
 Plugin 'Raimondi/delimitMate'
 "Plugin 'bkad/CamelCaseMotion'
 ""Plugin 'ervandew/screen'
-"Plugin 'benmills/vimux'
+Plugin 'benmills/vimux'
 
 
 "Plugin 'Lokaltog/vim-easymotion'
@@ -53,6 +53,8 @@ Plugin 'Raimondi/delimitMate'
 " colors
 Plugin 'chriskempson/vim-tomorrow-theme'
 Plugin 'jonathanfilip/vim-lucius'
+Plugin 'w0ng/vim-hybrid'
+Plugin 'chriskempson/base16-vim'
 "Plugin "daylerees/colour-schemes", { "rtp": "vim/" }
 " The sparkup vim script is in a subdirectory of this repo called vim.
 " Pass the path to set the runtimepath properly.
@@ -76,7 +78,10 @@ filetype plugin indent on    " required
 " see :h vundle for more details or wiki for FAQ
 " Put your non-Plugin stuff after this line
 
-colorscheme Tomorrow-Night
+" note that you neeed to install https://github.com/chriskempson/base16-shell
+let base16colorspace=256  " Access colors present in 256 colorspace
+
+"colorscheme base16-default-dark
 
 set nocompatible   " be IMproved
 set bs=2           " backspace should work as we expect it to
@@ -112,10 +117,6 @@ set splitbelow
 
 "nmap <C-A> "+ggVG
 
-" make search results always in the center
-nnoremap n nzzzs50zh
-nnoremap N Nzzzs50zh
-
 " automatically save before each make/execute command
 set autowrite
 
@@ -140,6 +141,12 @@ set ignorecase
 set smartcase  " only be case-sensitive if I use uppercase in my query
 set hlsearch " I Don't hate when half of the text lights up
 set virtualedit=block  " make selection better not bounded to end of lines
+" make search results always in the center
+" nnoremap n nzzzs50zh
+" nnoremap N Nzzzs50zh
+set nowrapscan " don't cycle when searching
+" Clears search buffer
+nnoremap // :noh<cr>
 
 " show chars that cannot be displayed as <13> instead of ^M
 set display+=uhex
@@ -152,7 +159,6 @@ set ttyfast "fast terminal connection
 
 set nowrap " don't wrap lines
 
-set nowrapscan " don't cycle when searching
 
 " I would rather depend on git
 set nobackup
@@ -236,7 +242,7 @@ endfunction
 function! OPEN_HTML()
   let s:file_name=expand('%')
   let s:html_name = substitute(s:file_name, '\..*', '.html', 'a')
-  return "system('open ".s:html_name."')"
+  return "system('open -a \"Safari\" ".s:html_name."')"
 endfunction
 
 " Autocommands for all languages:
@@ -248,7 +254,7 @@ autocmd FileType ruby   call RUBYSET()
 autocmd FileType eruby  call RUBYSET()
 autocmd FileType text   call TXTSET()
 autocmd FileType tex    call TEXSET()
-"autocmd FileType rmd    call RMDSET()
+autocmd FileType rmd    call RMDSET()
 "autocmd FileType r      call RSET()
 
 " for .hql files
@@ -291,9 +297,6 @@ map <C-l> <leader>c<Space>
 highlight NonText guifg=#4a4a59
 highlight SpecialKey guifg=#4a4a59
 set listchars=tab:▸\ ,eol:¬,trail:~,extends:▸,precedes:◂
-
-" Clears search buffer
-nnoremap // :noh<cr>
 
 " Get out of insert mode fast
 inoremap jj <ESC>
@@ -339,7 +342,7 @@ function! FilenameCopyFullPath()
 endfunction
 
 function! RmdCopyRender()
-  let @*= 'render("' . expand("%f") . '")'
+  let @*= 'rmarkdown::render("' . expand("%f") . '")'
 endfunction
 
 
@@ -384,6 +387,8 @@ noremap <Down> 20<C-e>
 cabbrev W w
 cabbrev Q q
 cabbrev E e
+cabbrev wQ! wq!
+
 
 " I just don't like them
 nnoremap K  k
@@ -491,3 +496,13 @@ nnoremap ; :
 let g:move_key_modifier = 'A'
 
 set guifont=Monoid:h11
+
+
+" but you to search for the ``` first
+let @r='jVnkytkpotjjn'
+
+" split the current window and scrollbind
+let @s='<17>v<04><04><15><04>:set scrollbind=<80>kb<0d><17>h:set scrollbind<0d>'
+
+"set background=dark
+colorscheme hybrid
