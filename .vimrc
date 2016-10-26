@@ -12,32 +12,37 @@ Plugin 'VundleVim/Vundle.vim'
 
 " The following are examples of different formats supported.
 " Keep Plugin commands between vundle#begin/end.
-"
+
 " vim-scripts repos
 Plugin 'yahiaelgamal/vim-airline'
 Plugin 'godlygeek/tabular'
 Plugin 'The-NERD-Commenter'
 Plugin 'ctrlp.vim'
-"Plugin 'ervandew/supertab'
 Plugin 'vim-scripts/AutoComplPop'
 Plugin 'matze/vim-move'
 Plugin 'scrooloose/nerdtree'
-Plugin 'snrooloose/syntastic'
+Plugin 'scrooloose/syntastic'
 Plugin 'autowitch/hive.vim'
+Plugin 'tpope/vim-surround'
+Plugin 'ervandew/snipmate.vim'
+Plugin 'Raimondi/delimitMate'
+Plugin 'benmills/vimux'
+
+Plugin 'vim-pandoc/vim-rmarkdown'
+Plugin 'vim-pandoc/vim-pandoc'
+Plugin 'vim-pandoc/vim-pandoc-syntax'
+
+
 "Plugin 'tpope/vim-endwise' " problem with delimitMate
-"
+"Plugin 'ervandew/supertab'
 "Plugin 'tpope/vim-fugitive'
 "Plugin 'tpope/vim-rails'
-Plugin 'tpope/vim-surround'
 "Plugin 'klen/python-mode'
 "Plugin 'jalvesaq/R-Vim-runtime'
 "Plugin 'Vim-R-plugin'
 "Plugin 'pangloss/vim-javascript'
-Plugin 'ervandew/snipmate.vim'
-Plugin 'Raimondi/delimitMate'
 "Plugin 'bkad/CamelCaseMotion'
-""Plugin 'ervandew/screen'
-Plugin 'benmills/vimux'
+"Plugin 'ervandew/screen'
 
 
 "Plugin 'Lokaltog/vim-easymotion'
@@ -46,7 +51,7 @@ Plugin 'benmills/vimux'
 "Plugin 'bling/vim-bufferline'
 "Plugin 'mileszs/ack.vim'
 "Plugin 'tpope/vim-dispatch'
-"
+
 "Plugin 'xolox/vim-session'
 "Plugin 'vim-misc'
 
@@ -109,7 +114,7 @@ set sidescroll=1     " not affecting zl and zh, affecting cursor motion
 set colorcolumn=80   " Long lines are evil
 set cursorline       " highlight curosr line But it somestimes makes vim slow
 
-set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*/cache/*       " Ignore some files
+set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*/*cache/*       " Ignore some files
 
 "Normal split directions
 set splitright
@@ -415,12 +420,11 @@ let g:syntastic_mode_map = { 'mode': 'passive',
 
 
 " Super tab configuration
-" let g:SuperTabDefaultCompletionType = "<c-x><c-u>" " omni
 
 " Auto Completion Config
 set completeopt=longest,menuone
+
 " show completion while typing
-"inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<C-g>u\<Tab>"
 
 " Black hole deletion/change (persist yanked lines in non-visual mode)
 nnoremap d "_d
@@ -492,9 +496,6 @@ set nosol
 " why use shift if you can ignore it
 nnoremap ; :
 
-" Move modifier, doesn't work for some reason
-let g:move_key_modifier = 'A'
-
 set guifont=Monoid:h11
 
 
@@ -504,5 +505,5 @@ let @r='jVnkytkpotjjn'
 " split the current window and scrollbind
 let @s='<17>v<04><04><15><04>:set scrollbind=<80>kb<0d><17>h:set scrollbind<0d>'
 
-"set background=dark
+set background=dark
 colorscheme hybrid

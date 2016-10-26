@@ -1,5 +1,3 @@
-colorscheme base16-tomorrow
-"
 "colorscheme delek
 "set bg=light
 
