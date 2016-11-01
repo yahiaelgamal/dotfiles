@@ -24,7 +24,7 @@ Plugin 'scrooloose/nerdtree'
 Plugin 'scrooloose/syntastic'
 Plugin 'autowitch/hive.vim'
 Plugin 'tpope/vim-surround'
-Plugin 'ervandew/snipmate.vim'
+"Plugin 'ervandew/snipmate.vim'
 Plugin 'Raimondi/delimitMate'
 Plugin 'benmills/vimux'
 
@@ -103,8 +103,8 @@ set expandtab
 set tabstop=4
 set softtabstop=2
 
-set foldmethod=indent
-set foldlevel=20
+"set foldmethod=indent
+"set foldlevel=20
 
 set t_Co=256         " Tell vim that my terminal has 256 colors
 set number           " Show line numbers
@@ -247,7 +247,7 @@ endfunction
 function! OPEN_HTML()
   let s:file_name=expand('%')
   let s:html_name = substitute(s:file_name, '\..*', '.html', 'a')
-  return "system('open -a \"Safari\" ".s:html_name."')"
+  return "system('open ".s:html_name."')"
 endfunction
 
 " Autocommands for all languages:
@@ -304,7 +304,10 @@ highlight SpecialKey guifg=#4a4a59
 set listchars=tab:▸\ ,eol:¬,trail:~,extends:▸,precedes:◂
 
 " Get out of insert mode fast
-inoremap jj <ESC>
+inoremap <TAB> <ESC>
+vnoremap <TAB> <ESC>
+inoremap <ESC> <NOP>
+vnoremap <ESC> <NOP>
 
 " Back to the previous buffer
 nnoremap <C-Space> <C-^>
