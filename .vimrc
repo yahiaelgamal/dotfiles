@@ -305,8 +305,11 @@ set listchars=tab:▸\ ,eol:¬,trail:~,extends:▸,precedes:◂
 
 " Get out of insert mode fast
 inoremap <TAB> <ESC>
+onoremap <TAB> <ESC>
 vnoremap <TAB> <ESC>
+
 inoremap <ESC> <NOP>
+onoremap <ESC> <NOP>
 vnoremap <ESC> <NOP>
 
 " Back to the previous buffer
