@@ -18,7 +18,7 @@ Plugin 'yahiaelgamal/vim-airline'
 Plugin 'godlygeek/tabular'
 Plugin 'The-NERD-Commenter'
 Plugin 'ctrlp.vim'
-Plugin 'vim-scripts/AutoComplPop'
+Plugin 'othree/vim-autocomplpop'
 Plugin 'matze/vim-move'
 Plugin 'scrooloose/nerdtree'
 Plugin 'scrooloose/syntastic'
@@ -27,11 +27,6 @@ Plugin 'tpope/vim-surround'
 "Plugin 'ervandew/snipmate.vim'
 Plugin 'Raimondi/delimitMate'
 Plugin 'benmills/vimux'
-
-Plugin 'vim-pandoc/vim-rmarkdown'
-Plugin 'vim-pandoc/vim-pandoc'
-Plugin 'vim-pandoc/vim-pandoc-syntax'
-
 
 "Plugin 'tpope/vim-endwise' " problem with delimitMate
 "Plugin 'ervandew/supertab'
@@ -247,7 +242,7 @@ endfunction
 function! OPEN_HTML()
   let s:file_name=expand('%')
   let s:html_name = substitute(s:file_name, '\..*', '.html', 'a')
-  return "system('open ".s:html_name."')"
+  return "system('open -a Safari ".s:html_name."')"
 endfunction
 
 " Autocommands for all languages:
@@ -423,12 +418,11 @@ let g:syntastic_mode_map = { 'mode': 'passive',
                            \ 'active_filetypes': [],
                            \ 'passive_filetypes': [] }
 
-
-
-" Super tab configuration
-
 " Auto Completion Config
 set completeopt=longest,menuone
+
+" <Enter> insers the currently highlighted mode
+inoremap <expr> <CR> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
 
 " show completion while typing
 
