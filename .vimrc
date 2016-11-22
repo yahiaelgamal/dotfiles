@@ -16,8 +16,8 @@ Plugin 'VundleVim/Vundle.vim'
 " vim-scripts repos
 Plugin 'yahiaelgamal/vim-airline'
 Plugin 'godlygeek/tabular'
-Plugin 'The-NERD-Commenter'
-Plugin 'ctrlp.vim'
+Plugin 'scrooloose/nerdcommenter'
+Plugin 'kien/ctrlp.vim'
 Plugin 'othree/vim-autocomplpop'
 Plugin 'matze/vim-move'
 Plugin 'scrooloose/nerdtree'
@@ -496,7 +496,8 @@ set nosol
 " why use shift if you can ignore it
 nnoremap ; :
 
-set guifont=Monoid:h11
+set guifont=Monoid\ Retina:h11
+"set guifont='Courier New'\ 10
 
 
 " but you to search for the ``` first
@@ -507,3 +508,7 @@ let @s='<17>v<04><04><15><04>:set scrollbind=<80>kb<0d><17>h:set scrollbind<0d>'
 
 set background=dark
 colorscheme hybrid
+
+" for remote copy/paste
+vmap <leader>c :w !ssh localhost -p 9238 pbcopy<CR>
+nmap <leader>p :r !ssh localhost -p 9238 pbpaste<CR>
