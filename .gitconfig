@@ -3,7 +3,7 @@
   email = yahiaelgamal@gmail.com
 
 [core]
-  editor = /usr/bin/vim
+  editor = $(which vim)
   excludesfile = ~/.gitignore_global
   quotepath = false # to ignore quoting unicode characters
   ignorecase = false

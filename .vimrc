@@ -71,9 +71,11 @@ filetype plugin indent on    " required
 "
 " Brief help
 " :PluginList       - lists configured plugins
-" :PluginInstall    - installs plugins; append `!` to update or just :PluginUpdate
+" :PluginInstall
+" - installs plugins; append `!` to update or just :PluginUpdate
 " :PluginSearch foo - searches for foo; append `!` to refresh local cache
-" :PluginClean      - confirms removal of unused plugins; append `!` to auto-approve removal
+" :PluginClean
+" - confirms removal of unused plugins; append `!` to auto-approve removal
 "
 " see :h vundle for more details or wiki for FAQ
 " Put your non-Plugin stuff after this line
@@ -347,6 +349,10 @@ function! FilenameCopyFullPath()
   let @*= expand("%:p")
 endfunction
 
+function! PathCopy()
+  let @*= expand("%:p:h")
+endfunction
+
 function! RmdCopyRender()
   let @*= 'rmarkdown::render("' . expand("%f") . '")'
 endfunction
@@ -355,9 +361,11 @@ endfunction
 
 command! FilenameCopy call FilenameCopy()
 command! FilenameCopyFullPath call FilenameCopyFullPath()
+command! PathCopy call PathCopy()
 
 noremap <leader>f :call FilenameCopy() <CR>
 noremap <leader>F :call FilenameCopyFullPath() <CR>
+noremap <leader>D :call PathCopy() <CR>
 
 command! RmdCopyRender call RmdCopyRender()
 noremap <leader>rf :call RmdCopyRender() <CR>
@@ -400,8 +408,8 @@ cabbrev wQ! wq!
 nnoremap K  k
 
 " The pipe
-imap <D-M> %>%
-imap <D-N> %<>%
+imap <D-M> %>% 
+imap <D-N> %<>% 
 
 
 " Set filetype to be text for new buffers
@@ -496,15 +504,15 @@ set nosol
 " why use shift if you can ignore it
 nnoremap ; :
 
-set guifont=Monoid\ Retina:h11
+set guifont=Monoid-Retina:h11
 "set guifont='Courier New'\ 10
 
 
 " but you to search for the ``` first
-let @r='jVnkytkpotjjn'
+let @r='jVnkytkptjnn'
 
 " split the current window and scrollbind
-let @s='<17>v<04><04><15><04>:set scrollbind=<80>kb<0d><17>h:set scrollbind<0d>'
+let @s='<17>v<04><04><15><04>:set scrollbind=<80>kb<0d><17>h:set scb<0d>'
 
 set background=dark
 colorscheme hybrid
