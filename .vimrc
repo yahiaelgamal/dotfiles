@@ -27,6 +27,8 @@ Plugin 'tpope/vim-surround'
 "Plugin 'ervandew/snipmate.vim'
 Plugin 'Raimondi/delimitMate'
 Plugin 'benmills/vimux'
+Plugin 'easymotion/vim-easymotion'
+
 
 "Plugin 'tpope/vim-endwise' " problem with delimitMate
 "Plugin 'ervandew/supertab'
@@ -40,7 +42,6 @@ Plugin 'benmills/vimux'
 "Plugin 'ervandew/screen'
 
 
-"Plugin 'Lokaltog/vim-easymotion'
 "Plugin 'NERD_Tree-and-ack'
 "Plugin 'airblade/vim-gitgutter'
 "Plugin 'bling/vim-bufferline'
@@ -56,9 +57,6 @@ Plugin 'jonathanfilip/vim-lucius'
 Plugin 'w0ng/vim-hybrid'
 Plugin 'chriskempson/base16-vim'
 "Plugin "daylerees/colour-schemes", { "rtp": "vim/" }
-" The sparkup vim script is in a subdirectory of this repo called vim.
-" Pass the path to set the runtimepath properly.
-Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
 " Install L9 and avoid a Naming conflict if you've already installed a
 " different version somewhere else.
 Plugin 'ascenator/L9', {'name': 'newL9'}
@@ -138,7 +136,7 @@ set timeout
 set timeoutlen=600
 
 " text search settings
-set incsearch  " show the first match already while I type
+"set incsearch  " show the first match already while I type
 set ignorecase
 set smartcase  " only be case-sensitive if I use uppercase in my query
 set hlsearch " I Don't hate when half of the text lights up
@@ -164,7 +162,7 @@ set nowrap " don't wrap lines
 
 " I would rather depend on git
 set nobackup
-set noswapfile
+"set noswapfile
 
 " vim scripts
 function! VIMSET()
@@ -418,11 +416,11 @@ autocmd BufEnter * if &filetype == "hql" | setlocal ft=sql | endif
 
 " Syntastic
 let g:syntastic_ruby_checkers = ['mri', 'rubocop']
-"let g:syntastic_python_checkers = ['pylint', 'pyfalkes']
+let g:syntastic_python_checkers = ['pyflakes', 'pylint']
 "let g:syntastic_mode_map = { 'mode': 'active',
                            "\ 'passive_filetypes': ['ruby', 'java'] }
 "let g:syntastic_javascript_checkers = ['jshint', 'jslint']
-let g:syntastic_mode_map = { 'mode': 'passive',
+let g:syntastic_mode_map = { 'mode': 'active',
                            \ 'active_filetypes': [],
                            \ 'passive_filetypes': [] }
 
