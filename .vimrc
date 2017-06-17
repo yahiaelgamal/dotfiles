@@ -307,6 +307,9 @@ inoremap <ESC> <NOP>
 onoremap <ESC> <NOP>
 vnoremap <ESC> <NOP>
 
+" don't ever use U to change upper/lower case
+vnoremap u <NOP>
+
 " Back to the previous buffer
 nnoremap <C-Space> <C-^>
 
