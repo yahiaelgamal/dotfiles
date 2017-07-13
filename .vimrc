@@ -28,6 +28,7 @@ Plugin 'tpope/vim-surround'
 Plugin 'Raimondi/delimitMate'
 Plugin 'benmills/vimux'
 Plugin 'easymotion/vim-easymotion'
+Plugin 'terryma/vim-multiple-cursors'
 
 
 "Plugin 'tpope/vim-endwise' " problem with delimitMate
@@ -515,9 +516,13 @@ let @r='jVnkytkptjnn'
 " split the current window and scrollbind
 let @s='<17>v<04><04><15><04>:set scrollbind=<80>kb<0d><17>h:set scb<0d>'
 
-set background=dark
 colorscheme hybrid
+set background=dark
+
 
 " for remote copy/paste
 vmap <leader>c :w !ssh localhost -p 9238 pbcopy<CR>
 nmap <leader>p :r !ssh localhost -p 9238 pbpaste<CR>
+
+let g:multi_cursor_quit_key='<Tab>'
+let g:multi_cursor_prev_key='<C-S-N>'
