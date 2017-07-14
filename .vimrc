@@ -29,6 +29,8 @@ Plugin 'Raimondi/delimitMate'
 Plugin 'benmills/vimux'
 Plugin 'easymotion/vim-easymotion'
 Plugin 'terryma/vim-multiple-cursors'
+Plugin 'xolox/vim-misc'
+Plugin 'xolox/vim-session'
 
 
 "Plugin 'tpope/vim-endwise' " problem with delimitMate
@@ -524,5 +526,8 @@ set background=dark
 vmap <leader>c :w !ssh localhost -p 9238 pbcopy<CR>
 nmap <leader>p :r !ssh localhost -p 9238 pbpaste<CR>
 
+" Use tab for esc (because esc is to far awy)
 let g:multi_cursor_quit_key='<Tab>'
-let g:multi_cursor_prev_key='<C-S-N>'
+
+
+let g:session_autoload=0
