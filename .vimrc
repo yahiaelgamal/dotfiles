@@ -14,7 +14,8 @@ Plugin 'VundleVim/Vundle.vim'
 " Keep Plugin commands between vundle#begin/end.
 
 " vim-scripts repos
-Plugin 'yahiaelgamal/vim-airline'
+Plugin 'vim-airline/vim-airline'
+"Plugin 'yahiaelgamal/vim-airline'
 Plugin 'godlygeek/tabular'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'kien/ctrlp.vim'
@@ -375,13 +376,13 @@ command! RmdCopyRender call RmdCopyRender()
 noremap <leader>rf :call RmdCopyRender() <CR>
 
 " airline config
-let g:airline_left_sep=''
-let g:airline_right_sep=''
-let g:airline_theme='tomorrow'
-let g:airline_branch_prefix = '⎇ '
-let g:airline_section_a = '%n %t'
-let g:airline_section_y = ''
-let g:airline_section_z = '%p%%:%l:%c'
+"
+let g:airline#extensions#tabline#enabled = 1
+
+let g:airline_left_sep = ''
+let g:airline_right_sep = ''
+let g:airline#extensions#tabline#left_sep = ' '
+let g:airline#extensions#tabline#left_alt_sep = '|'
 
 " For bufferline
 "let g:bufferline_echo = 0
@@ -412,8 +413,8 @@ cabbrev wQ! wq!
 nnoremap K  k
 
 " The pipe
-imap <D-M> %>% 
-imap <D-N> %<>% 
+imap <D-M> %>%
+imap <D-N> %<>%
 
 
 " Set filetype to be text for new buffers
@@ -530,4 +531,8 @@ nmap <leader>p :r !ssh localhost -p 9238 pbpaste<CR>
 let g:multi_cursor_quit_key='<Tab>'
 
 
-let g:session_autoload=0
+let g:session_autoload=1
+let g:session_autosave_periodic=1
+let g:session_autosave=1
+let g:session_default_overwrite=1
+let g:session_default_to_last=1
