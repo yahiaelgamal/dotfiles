@@ -92,7 +92,7 @@ set bs=2           " backspace should work as we expect it to
 set history=50     " remember last 50 commands
 set ruler          " show cursor position in the bottom line
 syntax on          " turn on syntax highlighting if not available by default
-set synmaxcol=400  " don't highlight more than 300 character
+set synmaxcol=1000  " don't highlight more than 300 character
 set encoding=utf-8 " Encode utf-8
 
 " Indentation related issues
@@ -137,7 +137,8 @@ set clipboard=unnamed
 " adjust timeout for mapped commands: 200 milliseconds should be enough for
 " everyone
 set timeout
-set timeoutlen=600
+set timeoutlen=200
+
 
 " text search settings
 "set incsearch  " show the first match already while I type
@@ -182,6 +183,7 @@ endfunction
 " Python
 function! PYSET()
   set nowrap
+  set fdm=indent
 
   set softtabstop=4
   set tabstop=4
@@ -292,6 +294,7 @@ noremap <leader>j :%!python -m json.tool<CR>
 nnoremap <leader>d :execute 'NERDTreeToggle' . getcwd()<CR>
 
 " Shortcut to rapidly toggle `set list`
+set list
 nnoremap <leader>l :set list!<CR>
 
 " Comment using NERDCommneter
@@ -362,6 +365,10 @@ function! RmdCopyRender()
   let @*= 'rmarkdown::render("' . expand("%f") . '")'
 endfunction
 
+function! TabularSpace()
+  Tabularize /\s\{1,}/
+endfunction
+
 
 
 command! FilenameCopy call FilenameCopy()
@@ -374,6 +381,10 @@ noremap <leader>D :call PathCopy() <CR>
 
 command! RmdCopyRender call RmdCopyRender()
 noremap <leader>rf :call RmdCopyRender() <CR>
+
+
+command! TabularSpace call TabularSpace()
+noremap t<space> :call TabularSpace() <CR>
 
 " airline config
 "
@@ -423,7 +434,8 @@ autocmd BufEnter * if &filetype == "hql" | setlocal ft=sql | endif
 
 " Syntastic
 let g:syntastic_ruby_checkers = ['mri', 'rubocop']
-let g:syntastic_python_checkers = ['pyflakes', 'pylint']
+let g:syntastic_python_checkers = ['pyflakes']
+", 'pylint']
 "let g:syntastic_mode_map = { 'mode': 'active',
                            "\ 'passive_filetypes': ['ruby', 'java'] }
 "let g:syntastic_javascript_checkers = ['jshint', 'jslint']
@@ -516,6 +528,7 @@ set guifont=Monoid-Retina:h11
 " but you to search for the ``` first
 let @r='jVnkytkptjnn'
 
+
 " split the current window and scrollbind
 let @s='<17>v<04><04><15><04>:set scrollbind=<80>kb<0d><17>h:set scb<0d>'
 
@@ -536,3 +549,34 @@ let g:session_autosave_periodic=1
 let g:session_autosave=1
 let g:session_default_overwrite=1
 let g:session_default_to_last=1
+
+
+" removes all breaklines (good for copying to bash)
+command! RemoveBreakLines g/^\s*$/d
+
+
+" Zooming in (just press +)
+func! s:zoom_toggle() abort
+  if 1 == winnr('$')
+    return
+  endif
+  let restore_cmd = winrestcmd()
+  wincmd |
+  wincmd _
+  if exists('t:zoom_restore')
+    exe t:zoom_restore
+    unlet t:zoom_restore
+  else
+    let t:zoom_restore = restore_cmd
+  endif
+  return '<Nop>'
+endfunc
+
+func! s:zoom_or_goto_column(cnt) abort
+  if a:cnt
+    exe 'norm! '.v:count.'|'
+  else
+    call s:zoom_toggle()
+  endif
+endfunc
+nnoremap +     :<C-U>call <SID>zoom_or_goto_column(v:count)<CR>
