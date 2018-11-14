@@ -300,19 +300,22 @@ nnoremap <leader>l :set list!<CR>
 " Comment using NERDCommneter
 map <C-l> <leader>c<Space>
 
+
 " Invisible chars
 highlight NonText guifg=#4a4a59
 highlight SpecialKey guifg=#4a4a59
 set listchars=tab:▸\ ,eol:¬,trail:~,extends:▸,precedes:◂
+
 
 " Get out of insert mode fast
 inoremap <TAB> <ESC>
 onoremap <TAB> <ESC>
 vnoremap <TAB> <ESC>
 
-inoremap <ESC> <NOP>
-onoremap <ESC> <NOP>
-vnoremap <ESC> <NOP>
+"inoremap <ESC> <NOP>
+"onoremap <ESC> <NOP>
+"vnoremap <ESC> <NOP>
+
 
 " don't ever use U to change upper/lower case
 vnoremap u <NOP>
@@ -390,8 +393,8 @@ noremap t<space> :call TabularSpace() <CR>
 "
 let g:airline#extensions#tabline#enabled = 1
 
-let g:airline_left_sep = ''
-let g:airline_right_sep = ''
+"let g:airline_left_sep = ''
+"let g:airline_right_sep = ''
 let g:airline#extensions#tabline#left_sep = ' '
 let g:airline#extensions#tabline#left_alt_sep = '|'
 
@@ -544,11 +547,11 @@ nmap <leader>p :r !ssh localhost -p 9238 pbpaste<CR>
 let g:multi_cursor_quit_key='<Tab>'
 
 
-let g:session_autoload=1
-let g:session_autosave_periodic=1
-let g:session_autosave=1
-let g:session_default_overwrite=1
-let g:session_default_to_last=1
+let g:session_autoload='yes'
+let g:session_autosave_periodic='yes'
+let g:session_autosave='yes'
+let g:session_default_overwrite='yes'
+let g:session_default_to_last='yes'
 
 
 " removes all breaklines (good for copying to bash)
