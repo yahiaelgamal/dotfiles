@@ -132,7 +132,7 @@ set autoread
 set wildmenu
 
 " y and d put stuff into system clipboard (so that other apps can see it)
-set clipboard=unnamed
+set clipboard+=unnamed
 
 " adjust timeout for mapped commands: 200 milliseconds should be enough for
 " everyone
@@ -395,9 +395,8 @@ let g:airline#extensions#tabline#enabled = 1
 
 "let g:airline_left_sep = ''
 "let g:airline_right_sep = ''
-let g:airline#extensions#tabline#left_sep = ' '
-let g:airline#extensions#tabline#left_alt_sep = '|'
-
+"let g:airline#extensions#tabline#left_sep = ' '
+"let g:airline#extensions#tabline#left_alt_sep = '|'
 " For bufferline
 "let g:bufferline_echo = 0
 "let g:bufferline_inactive_highlight = 'StatusLineNC'
@@ -436,8 +435,11 @@ autocmd BufEnter * if &filetype == "" | setlocal ft=txt | endif
 autocmd BufEnter * if &filetype == "hql" | setlocal ft=sql | endif
 
 " Syntastic
-let g:syntastic_ruby_checkers = ['mri', 'rubocop']
-let g:syntastic_python_checkers = ['pyflakes']
+"let g:syntastic_ruby_checkers = ['mri', 'rubocop']
+"let g:syntastic_python_checkers = ["pylint"]
+
+"["flakes8"] "['pyflakes']
+
 ", 'pylint']
 "let g:syntastic_mode_map = { 'mode': 'active',
                            "\ 'passive_filetypes': ['ruby', 'java'] }
