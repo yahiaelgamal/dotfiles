@@ -97,10 +97,10 @@ set encoding=utf-8 " Encode utf-8
 
 " Indentation related issues
 set autoindent
-set shiftwidth=2
 set expandtab
-set tabstop=4
+set tabstop=2
 set softtabstop=2
+set shiftwidth=2
 
 "set foldmethod=indent
 "set foldlevel=20
@@ -185,8 +185,9 @@ function! PYSET()
   set nowrap
   set fdm=indent
 
-  set softtabstop=4
   set tabstop=4
+  set softtabstop=4
+  set shiftwidth=4
   noremap py :!python<CR>
   noremap apy :%!python<CR>
 endfunction
@@ -407,6 +408,7 @@ let g:airline#extensions#tabline#enabled = 1
 "noremap <C-t> :CtrlPTag <CR>
 let g:ctrlp_clear_cache_on_exit = 0
 let g:ctrlp_working_path_mode = 0
+set tags=tags;/ "search for tags in the parent directory till you find one 
 
 
 " Fast scrolling
@@ -492,13 +494,6 @@ let delimitMate_expand_cr = 1
 let delimitMate_expand_space = 1
 "let g:SuperTabCrMapping = 0 " fix the problem
 
-" session
-"let g:session_autosave_periodic = 1
-"let g:session_autosave = 'yes'
-"let g:session_autoload = 'no'
-"let g:session_default_overwrite = 1
-"let g:session_default_to_last = 1
-
 " move to end of pasted text, to ease multiple pastes
 vnoremap y y`]
 vnoremap p p`]
@@ -549,6 +544,7 @@ nmap <leader>p :r !ssh localhost -p 9238 pbpaste<CR>
 let g:multi_cursor_quit_key='<Tab>'
 
 
+"session
 let g:session_autoload='yes'
 let g:session_autosave_periodic='yes'
 let g:session_autosave='yes'
