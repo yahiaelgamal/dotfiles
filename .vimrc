@@ -166,9 +166,9 @@ set ttyfast "fast terminal connection
 set nowrap " don't wrap lines
 
 
-" I would rather depend on git
+" no swap nor backup
 set nobackup
-"set noswapfile
+set noswapfile
 
 " vim scripts
 function! VIMSET()
