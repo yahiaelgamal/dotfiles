@@ -137,7 +137,7 @@ set clipboard+=unnamed
 " adjust timeout for mapped commands: 200 milliseconds should be enough for
 " everyone
 set timeout
-set timeoutlen=200
+set timeoutlen=400
 
 
 " text search settings
@@ -300,6 +300,8 @@ nnoremap <leader>l :set list!<CR>
 
 " Comment using NERDCommneter
 map <C-l> <leader>c<Space>
+" Align delimters (good for python)
+let g:NERDDefaultAlign = 'left'
 
 
 " Invisible chars
