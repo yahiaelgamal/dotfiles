@@ -32,6 +32,7 @@ Plugin 'easymotion/vim-easymotion'
 Plugin 'terryma/vim-multiple-cursors'
 Plugin 'xolox/vim-misc'
 Plugin 'xolox/vim-session'
+Plugin 'jlfwong/vim-mercenary'
 
 
 "Plugin 'tpope/vim-endwise' " problem with delimitMate
