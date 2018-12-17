@@ -32,7 +32,6 @@ Plugin 'easymotion/vim-easymotion'
 Plugin 'terryma/vim-multiple-cursors'
 Plugin 'xolox/vim-misc'
 Plugin 'xolox/vim-session'
-Plugin 'jlfwong/vim-mercenary'
 
 
 "Plugin 'tpope/vim-endwise' " problem with delimitMate
@@ -433,7 +432,7 @@ nnoremap K  k
 " The pipe
 imap <D-M> %>%
 imap <D-N> %<>%
-
+imap <S-D-Space> <Space>
 
 " Set filetype to be text for new buffers
 autocmd BufEnter * if &filetype == "" | setlocal ft=txt | endif

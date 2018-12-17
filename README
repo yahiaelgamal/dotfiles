@@ -1,0 +1,5 @@
+for matplotlibrc it should be linked inside .matplotlib
+
+
+For instance:
+`ln -s ~/dotfiles/matplotlibrc .matplotlib`
