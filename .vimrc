@@ -33,6 +33,8 @@ Plugin 'terryma/vim-multiple-cursors'
 Plugin 'xolox/vim-misc'
 Plugin 'xolox/vim-session'
 
+Plugin 'vim-pandoc/vim-rmarkdown'
+
 
 "Plugin 'tpope/vim-endwise' " problem with delimitMate
 "Plugin 'ervandew/supertab'
@@ -132,7 +134,10 @@ set autoread
 set wildmenu
 
 " y and d put stuff into system clipboard (so that other apps can see it)
-set clipboard+=unnamed
+"set clipboard+=unnamed
+"set clipboard=unnamedplus
+set clipboard=unnamed
+
 
 " adjust timeout for mapped commands: 200 milliseconds should be enough for
 " everyone

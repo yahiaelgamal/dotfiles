@@ -1,6 +1,9 @@
 homebrew=/usr/local/bin:/usr/local/sbin
 export PATH=$homebrew:$PATH
 
+
+export PKG_CONFIG_PATH=/usr/local/lib/pkgconfig
+
 export CLICOLOR=1
 export LSCOLORS=ExFxCxDxBxegedabagacad
 export GREP_OPTIONS='--color=auto'
@@ -19,7 +22,7 @@ alias g='grep'
 export HISTSIZE=1000000
 
 alias tmux="TERM=screen-256color-bce tmux"
-alias vim="/usr/local/bin/vim"
+#alias vim="/usr/local/bin/vim"
 
 if [ -f ~/.git-completion.bash ]; then
   . ~/.git-completion.bash
@@ -99,3 +102,16 @@ _complete_hosts () {
 }
 complete -F _complete_hosts ssh
 complete -F _complete_hosts host
+
+
+# first argument is machine
+copy_vim(){
+  if [ -f /tmp/vimfiles.tar ]; then
+    rm /tmp/vimfiles.tar
+  fi
+
+  tar -czvf /tmp/vimfiles.tar ~/.vim
+  scp /tmp/vimfiles.tar $1:~/
+  scp ~/.vimrc $1:~/
+  rm /tmp/vimfiles.tar
+}
