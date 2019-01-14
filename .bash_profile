@@ -106,12 +106,20 @@ complete -F _complete_hosts host
 
 # first argument is machine
 copy_vim(){
-  if [ -f /tmp/vimfiles.tar ]; then
-    rm /tmp/vimfiles.tar
-  fi
+  if (( "$#" != 1 )) 
+  then
+    echo "Specify a host!"
+  else
+    if [ -f /tmp/vimfiles.tar ]; then
+      rm /tmp/vimfiles.tar
+    fi
 
-  tar -czvf /tmp/vimfiles.tar ~/.vim
-  scp /tmp/vimfiles.tar $1:~/
-  scp ~/.vimrc $1:~/
-  rm /tmp/vimfiles.tar
+    pushd ~/
+    tar -czvf /tmp/vimfiles.tar .vim &&
+      scp /tmp/vimfiles.tar $1:~/ &&
+      scp ~/.vimrc $1:~/ &&
+      ssh $1 "tar -xzvf ~/vimfiles.tar" 
+      rm /tmp/vimfiles.tar
+    popd
+  fi
 }
