@@ -237,6 +237,7 @@ function! RMDSET()
   vnoremap R "ry:call VimuxRunCommand(@r)<CR>gvvvj
   " if noselection, put current line stuff in @r and run it
   nnoremap R "ryy:call VimuxRunCommand(@r)<CR>j
+  setlocal commentstring="#%s"
 endfunction
 
 function! RSET()
@@ -269,6 +270,7 @@ autocmd FileType ruby   call RUBYSET()
 autocmd FileType eruby  call RUBYSET()
 autocmd FileType text   call TXTSET()
 autocmd FileType tex    call TEXSET()
+autocmd FileType rmd    call RMDSET()
 autocmd FileType rmd    call RMDSET()
 "autocmd FileType r      call RSET()
 
@@ -303,7 +305,7 @@ noremap <leader>j :%!python -m json.tool<CR>
 nnoremap <leader>d :execute 'NERDTreeToggle' . getcwd()<CR>
 
 " Shortcut to rapidly toggle `set list`
-set list
+"set list
 nnoremap <leader>l :set list!<CR>
 
 " Comment using NERDCommneter
@@ -423,7 +425,8 @@ function! TextEnableCodeSnip(filetype,start,end,textSnipHl) abort
 endfunction
 
 " https://stackoverflow.com/questions/25267160/can-i-have-vim-highlight-code-in-r-markup
-autocmd BufNewFile,BufRead,BufEnter *.Rmd :call TextEnableCodeSnip('r',   '```{r}',   '```', 'SpecialComment')
+autocmd BufNewFile,BufRead,BufEnter *.Rmd :call TextEnableCodeSnip('r',   '```{r.*}',   '```', 'SpecialComment')
+au BufNewFile,BufRead *.Rmd set filetype=rmd
 
 command! TabularSpace call TabularSpace()
 noremap t<space> :call TabularSpace() <CR>
