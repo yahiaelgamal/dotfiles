@@ -295,3 +295,6 @@ alias resetaudio='sudo killall coreaudiod'
 test -e "${HOME}/.iterm2_shell_integration.bash" && source "${HOME}/.iterm2_shell_integration.bash"
 
 export PATH="$HOME/.cargo/bin:$PATH"
+
+bind 'set show-all-if-ambiguous on'
+bind 'TAB:menu-complete'
