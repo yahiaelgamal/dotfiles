@@ -17,6 +17,7 @@ Plugin 'VundleVim/Vundle.vim'
 Plugin 'vim-airline/vim-airline'
 "Plugin 'yahiaelgamal/vim-airline'
 Plugin 'godlygeek/tabular'
+Plugin 'integralist/vim-mypy'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'kien/ctrlp.vim'
 Plugin 'othree/vim-autocomplpop'
@@ -478,7 +479,8 @@ autocmd BufEnter * if &filetype == "hql" | setlocal ft=sql | endif
 
 " Syntastic
 "let g:syntastic_ruby_checkers = ['mri', 'rubocop']
-"let g:syntastic_python_checkers = ["pylint"]
+let g:syntastic_python_python_exec = '/usr/bin/python3'
+let g:syntastic_python_checkers = ["mypy", "flake8"]
 
 "["flakes8"] "['pyflakes']
 
@@ -489,6 +491,7 @@ autocmd BufEnter * if &filetype == "hql" | setlocal ft=sql | endif
 let g:syntastic_mode_map = { 'mode': 'active',
                            \ 'active_filetypes': [],
                            \ 'passive_filetypes': [] }
+
 
 " Auto Completion Config
 set completeopt=longest,menuone
