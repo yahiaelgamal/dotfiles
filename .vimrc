@@ -18,6 +18,7 @@ Plugin 'vim-airline/vim-airline'
 "Plugin 'yahiaelgamal/vim-airline'
 Plugin 'godlygeek/tabular'
 Plugin 'integralist/vim-mypy'
+Plugin 'elzr/vim-json'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'kien/ctrlp.vim'
 Plugin 'othree/vim-autocomplpop'
@@ -98,15 +99,19 @@ set bs=2           " backspace should work as we expect it to
 set history=50     " remember last 50 commands
 set ruler          " show cursor position in the bottom line
 syntax on          " turn on syntax highlighting if not available by default
-set synmaxcol=1000  " don't highlight more than 300 character
+set synmaxcol=10000  " don't highlight more than 300 character
 set encoding=utf-8 " Encode utf-8
 
 " Indentation related issues
 set autoindent
 set expandtab
-set tabstop=2
-set softtabstop=2
-set shiftwidth=2
+"set tabstop=2
+"set softtabstop=2
+"set shiftwidth=2
+
+  set tabstop=4
+  set softtabstop=4
+  set shiftwidth=4
 
 "set foldmethod=indent
 "set foldlevel=20
@@ -488,9 +493,11 @@ let g:syntastic_python_checkers = ["mypy", "flake8"]
 "let g:syntastic_mode_map = { 'mode': 'active',
                            "\ 'passive_filetypes': ['ruby', 'java'] }
 "let g:syntastic_javascript_checkers = ['jshint', 'jslint']
+"
+
 let g:syntastic_mode_map = { 'mode': 'active',
-                           \ 'active_filetypes': [],
-                           \ 'passive_filetypes': [] }
+                           \ 'active_filetypes': ["python"],
+                           \ 'passive_filetypes': ["java", "cpp", "php"] }
 
 
 " Auto Completion Config
@@ -624,3 +631,11 @@ func! s:zoom_or_goto_column(cnt) abort
   endif
 endfunc
 nnoremap +     :<C-U>call <SID>zoom_or_goto_column(v:count)<CR>
+
+function! SourceIfExists(file)
+  if filereadable(expand(a:file))
+    exe 'source' a:file
+  endif
+endfunction
+
+call SourceIfExists('~/.vimrc_fb')
