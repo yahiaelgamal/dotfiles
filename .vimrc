@@ -454,7 +454,7 @@ let g:airline#extensions#tabline#enabled = 1
 "noremap <C-t> :CtrlPTag <CR>
 let g:ctrlp_clear_cache_on_exit = 0
 let g:ctrlp_working_path_mode = 0
-set tags=tags;/ "search for tags in the parent directory till you find one 
+set tags=tags;/ "search for tags in the parent directory till you find one
 
 
 " Fast scrolling
@@ -485,7 +485,7 @@ autocmd BufEnter * if &filetype == "hql" | setlocal ft=sql | endif
 " Syntastic
 "let g:syntastic_ruby_checkers = ['mri', 'rubocop']
 let g:syntastic_python_python_exec = '/usr/bin/python3'
-let g:syntastic_python_checkers = ["mypy", "flake8"]
+let g:syntastic_python_checkers = ["flake8", "mypy"]
 
 "["flakes8"] "['pyflakes']
 
@@ -639,3 +639,6 @@ function! SourceIfExists(file)
 endfunction
 
 call SourceIfExists('~/.vimrc_fb')
+
+" no trailing space
+command Notrailingspace execute '%s/\s\{1,}$//g'
