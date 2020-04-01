@@ -1,6 +1,3 @@
-set nocompatible              " be iMproved, required
-filetype off                  " required
-
 " set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
@@ -15,6 +12,7 @@ Plugin 'VundleVim/Vundle.vim'
 
 " vim-scripts repos
 Plugin 'vim-airline/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
 "Plugin 'yahiaelgamal/vim-airline'
 Plugin 'godlygeek/tabular'
 Plugin 'integralist/vim-mypy'
@@ -99,7 +97,7 @@ set bs=2           " backspace should work as we expect it to
 set history=50     " remember last 50 commands
 set ruler          " show cursor position in the bottom line
 syntax on          " turn on syntax highlighting if not available by default
-set synmaxcol=10000  " don't highlight more than 300 character
+set synmaxcol=100000  " don't highlight more than 300 character
 set encoding=utf-8 " Encode utf-8
 
 " Indentation related issues
@@ -202,8 +200,8 @@ function! PYSET()
   set tabstop=4
   set softtabstop=4
   set shiftwidth=4
-  noremap py :!python<CR>
-  noremap apy :%!python<CR>
+  noremap py :!python3<CR>
+  noremap apy :%!python3<CR>
 endfunction
 
 function! RUBYSET()
@@ -582,8 +580,11 @@ let @r='jVnkytkptjnn'
 " split the current window and scrollbind
 let @s='<17>v<04><04><15><04>:set scrollbind=<80>kb<0d><17>h:set scb<0d>'
 
-colorscheme hybrid
-set background=dark
+"colorscheme hybrid
+"set background=dark
+
+colorscheme Tomorrow
+"set background=light
 
 
 " for remote copy/paste
