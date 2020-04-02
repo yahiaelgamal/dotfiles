@@ -1,91 +1,69 @@
-" set the runtime path to include Vundle and initialize
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
+" https://github.com/junegunn/vim-plug
+call plug#begin()
 " alternatively, pass a path where Vundle should install plugins
-"call vundle#begin('~/some/path/here')
+" 
+Plug 'scrooloose/nerdtree'
+Plug 'scrooloose/nerdcommenter'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+Plug 'easymotion/vim-easymotion'
 
-" let Vundle manage Vundle, required
-Plugin 'VundleVim/Vundle.vim'
+Plug 'xolox/vim-misc' " needed for vim-session
+Plug 'xolox/vim-session'
+Plug 'kien/ctrlp.vim'
+Plug 'scrooloose/syntastic'
+Plug 'godlygeek/tabular'
+Plug 'terryma/vim-multiple-cursors'
 
-" The following are examples of different formats supported.
-" Keep Plugin commands between vundle#begin/end.
+Plug 'neoclide/coc.nvim', {'branch': 'release'} 
+Plug 'tpope/vim-surround'
+Plug 'matze/vim-move'
+"Plug 'elzr/vim-json'
 
-" vim-scripts repos
-Plugin 'vim-airline/vim-airline'
-Plugin 'vim-airline/vim-airline-themes'
-"Plugin 'yahiaelgamal/vim-airline'
-Plugin 'godlygeek/tabular'
-Plugin 'integralist/vim-mypy'
-Plugin 'elzr/vim-json'
-Plugin 'scrooloose/nerdcommenter'
-Plugin 'kien/ctrlp.vim'
-Plugin 'othree/vim-autocomplpop'
-Plugin 'matze/vim-move'
-Plugin 'scrooloose/nerdtree'
-Plugin 'scrooloose/syntastic'
-Plugin 'autowitch/hive.vim'
-Plugin 'tpope/vim-surround'
-"Plugin 'ervandew/snipmate.vim'
-Plugin 'Raimondi/delimitMate'
-Plugin 'benmills/vimux'
-Plugin 'easymotion/vim-easymotion'
-Plugin 'terryma/vim-multiple-cursors'
-Plugin 'xolox/vim-misc'
-Plugin 'xolox/vim-session'
-"Plugin 'vim-pandoc/vim-pandoc'
-"Plugin 'vim-pandoc/vim-rmarkdown'
-"Plugin 'vim-pandoc/vim-pandoc-syntax'
+"Plug 'integralist/vim-mypy'
+"Plug 'othree/vim-autocomplpop'
+"Plug 'autowitch/hive.vim'
+"Plug 'ervandew/snipmate.vim'
+"Plug 'Raimondi/delimitMate'
+"Plug 'benmills/vimux'
 
 
-"Plugin 'jalvesaq/Nvim-R'
+"
+"
+"Plug 'tpope/vim-endwise' " problem with delimitMate
+"Plug 'ervandew/supertab'
+"Plug 'tpope/vim-fugitive'
+"Plug 'tpope/vim-rails'
+"Plug 'klen/python-mode'
+"Plug 'jalvesaq/R-Vim-runtime'
+"Plug 'Vim-R-plugin'
+"Plug 'pangloss/vim-javascript'
+"Plug 'bkad/CamelCaseMotion'
+"Plug 'ervandew/screen'
 
-"Plugin 'tpope/vim-endwise' " problem with delimitMate
-"Plugin 'ervandew/supertab'
-"Plugin 'tpope/vim-fugitive'
-"Plugin 'tpope/vim-rails'
-"Plugin 'klen/python-mode'
-"Plugin 'jalvesaq/R-Vim-runtime'
-"Plugin 'Vim-R-plugin'
-"Plugin 'pangloss/vim-javascript'
-"Plugin 'bkad/CamelCaseMotion'
-"Plugin 'ervandew/screen'
 
+"Plug 'NERD_Tree-and-ack'
+"Plug 'airblade/vim-gitgutter'
+"Plug 'bling/vim-bufferline'
+"Plug 'mileszs/ack.vim'
+"Plug 'tpope/vim-dispatch'
 
-"Plugin 'NERD_Tree-and-ack'
-"Plugin 'airblade/vim-gitgutter'
-"Plugin 'bling/vim-bufferline'
-"Plugin 'mileszs/ack.vim'
-"Plugin 'tpope/vim-dispatch'
-
-"Plugin 'xolox/vim-session'
-"Plugin 'vim-misc'
+"Plug 'xolox/vim-session'
+"Plug 'vim-misc'
 
 " colors
-Plugin 'chriskempson/vim-tomorrow-theme'
-Plugin 'jonathanfilip/vim-lucius'
-Plugin 'w0ng/vim-hybrid'
-Plugin 'chriskempson/base16-vim'
-"Plugin "daylerees/colour-schemes", { "rtp": "vim/" }
+Plug 'chriskempson/vim-tomorrow-theme'
+Plug 'jonathanfilip/vim-lucius'
+Plug 'w0ng/vim-hybrid'
+Plug 'chriskempson/base16-vim'
+"Plug "daylerees/colour-schemes", { "rtp": "vim/" }
 " Install L9 and avoid a Naming conflict if you've already installed a
 " different version somewhere else.
-Plugin 'ascenator/L9', {'name': 'newL9'}
+"Plug 'ascenator/L9', {'name': 'newL9'}
 
 " All of your Plugins must be added before the following line
-call vundle#end()            " required
-filetype plugin indent on    " required
-" To ignore plugin indent changes, instead use:
-"filetype plugin on
-"
-" Brief help
-" :PluginList       - lists configured plugins
-" :PluginInstall
-" - installs plugins; append `!` to update or just :PluginUpdate
-" :PluginSearch foo - searches for foo; append `!` to refresh local cache
-" :PluginClean
-" - confirms removal of unused plugins; append `!` to auto-approve removal
-"
-" see :h vundle for more details or wiki for FAQ
-" Put your non-Plugin stuff after this line
+call plug#end()            " required
+
 
 " note that you neeed to install https://github.com/chriskempson/base16-shell
 let base16colorspace=256  " Access colors present in 256 colorspace
