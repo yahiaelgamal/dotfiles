@@ -1,5 +1,10 @@
 library(ggplot2)
 library(dplyr)
+library(readr)
+library(scales)
+library(glue)
+
+library(plotly)
 
 angled_x_axis = function(angle=60){
   theme(axis.text.x = element_text(angle = angle, hjust = 1))

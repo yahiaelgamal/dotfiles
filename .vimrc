@@ -16,6 +16,7 @@ Plug 'godlygeek/tabular'
 Plug 'terryma/vim-multiple-cursors'
 
 Plug 'neoclide/coc.nvim', {'branch': 'release'} 
+Plug 'Raimondi/delimitMate' " auto insertion of )]}
 Plug 'tpope/vim-surround'
 Plug 'matze/vim-move'
 "Plug 'elzr/vim-json'
@@ -24,7 +25,6 @@ Plug 'matze/vim-move'
 "Plug 'othree/vim-autocomplpop'
 "Plug 'autowitch/hive.vim'
 "Plug 'ervandew/snipmate.vim'
-"Plug 'Raimondi/delimitMate'
 "Plug 'benmills/vimux'
 
 
@@ -621,3 +621,5 @@ call SourceIfExists('~/.vimrc_fb')
 
 " no trailing space
 command Notrailingspace execute '%s/\s\{1,}$//g'
+
+let g:airline_section_c = '%t'
