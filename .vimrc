@@ -25,7 +25,7 @@ Plugin 'scrooloose/syntastic'
 Plugin 'godlygeek/tabular'
 Plugin 'terryma/vim-multiple-cursors'
 
-Plugin 'neoclide/coc.nvim', {'branch': 'release'} 
+" Plugin 'neoclide/coc.nvim', {'branch': 'release'}
 Plugin 'Raimondi/delimitMate' " auto insertion of )]}
 Plugin 'tpope/vim-surround'
 Plugin 'matze/vim-move'
