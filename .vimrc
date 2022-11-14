@@ -1,78 +1,70 @@
 set nocompatible              " be iMproved, required
 filetype off                  " required
 
-" set the runtime path to include Vundle and initialize
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
-" alternatively, pass a path where Vundle should install plugins
-"call vundle#begin('~/some/path/here')
 
-" let Vundle manage Vundle, required
-Plugin 'VundleVim/Vundle.vim'
+call plug#begin()
 
-" alternatively, pass a path where Vundle should install plugins
-" 
-Plugin 'scrooloose/nerdtree'
-Plugin 'scrooloose/nerdcommenter'
-Plugin 'vim-airline/vim-airline'
-Plugin 'vim-airline/vim-airline-themes'
-Plugin 'easymotion/vim-easymotion'
+Plug 'scrooloose/nerdtree'
+Plug 'scrooloose/nerdcommenter'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+Plug 'easymotion/vim-easymotion'
 
-Plugin 'xolox/vim-misc' " needed for vim-session
-Plugin 'xolox/vim-session'
-Plugin 'kien/ctrlp.vim'
-Plugin 'scrooloose/syntastic'
-Plugin 'godlygeek/tabular'
-Plugin 'terryma/vim-multiple-cursors'
+Plug 'xolox/vim-misc' " needed for vim-session
+Plug 'xolox/vim-session'
+Plug 'kien/ctrlp.vim'
+Plug 'dense-analysis/ale'
+Plug 'godlygeek/tabular'
+Plug 'terryma/vim-multiple-cursors'
 
-" Plugin 'neoclide/coc.nvim', {'branch': 'release'}
-Plugin 'Raimondi/delimitMate' " auto insertion of )]}
-Plugin 'tpope/vim-surround'
-Plugin 'matze/vim-move'
-"Plugin 'elzr/vim-json'
+" Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'Raimondi/delimitMate' " auto insertion of )]}
+Plug 'tpope/vim-surround'
+Plug 'matze/vim-move'
+"Plug 'elzr/vim-json'
 
-"Plugin 'integralist/vim-mypy'
-"Plugin 'othree/vim-autocomplpop'
-"Plugin 'autowitch/hive.vim'
-"Plugin 'ervandew/snipmate.vim'
-"Plugin 'benmills/vimux'
+"Plug 'integralist/vim-mypy'
+"Plug 'othree/vim-autocomplpop'
+"Plug 'autowitch/hive.vim'
+"Plug 'ervandew/snipmate.vim'
+"Plug 'benmills/vimux'
 
 
 "
 "
-"Plugin 'tpope/vim-endwise' " problem with delimitMate
-"Plugin 'ervandew/supertab'
-"Plugin 'tpope/vim-fugitive'
-"Plugin 'tpope/vim-rails'
-"Plugin 'klen/python-mode'
-"Plugin 'jalvesaq/R-Vim-runtime'
-"Plugin 'Vim-R-plugin'
-"Plugin 'pangloss/vim-javascript'
-"Plugin 'bkad/CamelCaseMotion'
-"Plugin 'ervandew/screen'
+"Plug 'tpope/vim-endwise' " problem with delimitMate
+"Plug 'ervandew/supertab'
+"Plug 'tpope/vim-fugitive'
+"Plug 'tpope/vim-rails'
+"Plug 'klen/python-mode'
+"Plug 'jalvesaq/R-Vim-runtime'
+"Plug 'Vim-R-plugin'
+"Plug 'pangloss/vim-javascript'
+"Plug 'bkad/CamelCaseMotion'
+"Plug 'ervandew/screen'
 
 
-"Plugin 'NERD_Tree-and-ack'
-"Plugin 'airblade/vim-gitgutter'
-"Plugin 'bling/vim-bufferline'
-"Plugin 'mileszs/ack.vim'
-"Plugin 'tpope/vim-dispatch'
+"Plug 'NERD_Tree-and-ack'
+"Plug 'airblade/vim-gitgutter'
+"Plug 'bling/vim-bufferline'
+"Plug 'mileszs/ack.vim'
+"Plug 'tpope/vim-dispatch'
 
-"Plugin 'xolox/vim-session'
-"Plugin 'vim-misc'
+"Plug 'xolox/vim-session'
+"Plug 'vim-misc'
 
 " colors
-Plugin 'chriskempson/vim-tomorrow-theme'
-Plugin 'jonathanfilip/vim-lucius'
-Plugin 'w0ng/vim-hybrid'
-Plugin 'chriskempson/base16-vim'
-"Plugin "daylerees/colour-schemes", { "rtp": "vim/" }
+Plug 'chriskempson/vim-tomorrow-theme'
+Plug 'jonathanfilip/vim-lucius'
+Plug 'w0ng/vim-hybrid'
+Plug 'chriskempson/base16-vim'
+"Plug "daylerees/colour-schemes", { "rtp": "vim/" }
 " Install L9 and avoid a Naming conflict if you've already installed a
 " different version somewhere else.
-"Plugin 'ascenator/L9', {'name': 'newL9'}
+"Plug 'ascenator/L9', {'name': 'newL9'}
 
-" All of your Plugins must be added before the following line
-call vundle#end()            " required
+" All of your Plugs must be added before the following line
+call plug#end()
 filetype plugin indent on    " required
 
 

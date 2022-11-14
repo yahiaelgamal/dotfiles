@@ -1,6 +1,5 @@
-homebrew=/usr/local/bin:/usr/local/sbin
-export PATH=$homebrew:$PATH
-
+# Set PATH, MANPATH, etc., for Homebrew.
+eval "$(/opt/homebrew/bin/brew shellenv)"
 
 export PKG_CONFIG_PATH=/usr/local/lib/pkgconfig
 
