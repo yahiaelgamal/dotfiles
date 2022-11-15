@@ -461,22 +461,18 @@ imap <S-D-Space> <Space>
 autocmd BufEnter * if &filetype == "" | setlocal ft=txt | endif
 autocmd BufEnter * if &filetype == "hql" | setlocal ft=sql | endif
 
-" Syntastic
-"let g:syntastic_ruby_checkers = ['mri', 'rubocop']
-let g:syntastic_python_python_exec = '/usr/bin/python3'
-let g:syntastic_python_checkers = ["flake8", "mypy"]
+" Ale linting and fixing
+let g:ale_linters={
+\ 'python': ['pylint'],
+\}
 
-"["flakes8"] "['pyflakes']
+let g:ale_fixers = {
+\   '*': ['remove_trailing_lines', 'trim_whitespace'],
+\   'python': ['black'],
+\}
 
-", 'pylint']
-"let g:syntastic_mode_map = { 'mode': 'active',
-                           "\ 'passive_filetypes': ['ruby', 'java'] }
-"let g:syntastic_javascript_checkers = ['jshint', 'jslint']
-"
-
-let g:syntastic_mode_map = { 'mode': 'active',
-                           \ 'active_filetypes': ["python"],
-                           \ 'passive_filetypes': ["java", "cpp", "php"] }
+let g:ale_fix_on_save = 1
+"let g:ale_fixers = {'python': ['black']}
 
 
 " Auto Completion Config
@@ -623,6 +619,6 @@ endfunction
 call SourceIfExists('~/.vimrc_fb')
 
 " no trailing space
-command Notrailingspace execute '%s/\s\{1,}$//g'
+command! Notrailingspace execute '%s/\s\{1,}$//g'
 
 let g:airline_section_c = '%t'
