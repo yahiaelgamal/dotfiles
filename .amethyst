@@ -1,8 +1,11 @@
 {
+    "URL":  "https://github.com/ianyh/Amethyst/blob/3c2835adacc1fea50ab7853b2a96d78e943faa5c/docs/configuration-files.md",
     "LAYOUTS": "----------------------",
     "layouts": [
         "fullscreen",
-        "tall",
+        "two-pane",
+        "middle-wide",
+        "tall-right",
         "floating"
     ],
 
@@ -63,19 +66,19 @@
         "mod": "mod2",
         "key": "space"
     },
-    "select-tall-layout": {
+    "select-fullscreen-layout": {
         "mod": "mod1",
         "key": "a"
     },
-    "select-wide-layout": {
+    "select-two-pane-layout": {
         "mod": "mod1",
         "key": "s"
     },
-    "select-fullscreen-layout": {
+    "select-3column-middle-layout": {
         "mod": "mod1",
         "key": "d"
     },
-    "select-column-layout": {
+    "select-tall-layout": {
         "mod": "mod1",
         "key": "f"
     },
@@ -197,9 +200,17 @@
     },
 
     "MISC": "----------------------",
-    "floating": [],
+    "floating": ["com.apple.iCal",
+                 "com.spotify.client",
+                 "com.apple.ActivityMonitor",
+                 "com.apple.Stickies",
+                 ],
+    "floating-is-blacklist": true,
     "float-small-windows": true,
-    "mouse-follows-focus": true,
+    "mouse-follows-focus": false,
+    "mouse-swaps-windows": true,
+    "mouse-resizes-windows": true,
     "enables-layout-hud": true,
+    "new-windows-to-main": false,
     "enables-layout-hud-on-space-change": true
 }
