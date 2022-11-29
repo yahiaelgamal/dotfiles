@@ -11,15 +11,15 @@ Plug 'vim-airline/vim-airline-themes'
 Plug 'easymotion/vim-easymotion'
 
 Plug 'xolox/vim-misc' " needed for vim-session
-Plug 'xolox/vim-session'
-Plug 'kien/ctrlp.vim'
-Plug 'dense-analysis/ale'
-Plug 'godlygeek/tabular'
+Plug 'xolox/vim-session' " Store state across vim
+Plug 'ctrlpvim/ctrlp.vim' " search files and buffer
+Plug 'dense-analysis/ale' " Linting and fixing async
+Plug 'godlygeek/tabular' " align tabular data
 Plug 'terryma/vim-multiple-cursors'
 
 " Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'Raimondi/delimitMate' " auto insertion of )]}
-Plug 'tpope/vim-surround'
+Plug 'tpope/vim-surround' " move around and edit surrounding elements
 Plug 'matze/vim-move'
 "Plug 'elzr/vim-json'
 
@@ -463,16 +463,15 @@ autocmd BufEnter * if &filetype == "hql" | setlocal ft=sql | endif
 
 " Ale linting and fixing
 let g:ale_linters={
-\ 'python': ['pylint'],
+\'python': ['pylint'],
 \}
 
 let g:ale_fixers = {
-\   '*': ['remove_trailing_lines', 'trim_whitespace'],
-\   'python': ['black'],
+\'*': ['remove_trailing_lines', 'trim_whitespace'],
+\'python': ['black'],
 \}
 
 let g:ale_fix_on_save = 1
-"let g:ale_fixers = {'python': ['black']}
 
 
 " Auto Completion Config
@@ -487,8 +486,8 @@ inoremap <expr> <CR> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
 nnoremap d "_d
 nnoremap dd "_dd
 nnoremap D "_D
-nnoremap c "_c
-nnoremap C "_C
+"nnoremap c "_c
+"nnoremap C "_C
 nnoremap x "_x
 nnoremap X "_X
 
@@ -622,3 +621,8 @@ call SourceIfExists('~/.vimrc_fb')
 command! Notrailingspace execute '%s/\s\{1,}$//g'
 
 let g:airline_section_c = '%t'
+
+" move plugin
+" only works in gvim, maybe move to .gvimrc or when alt button is not Meta
+let g:move_normal_option =1
+let g:move_key_modifier = 'A'
