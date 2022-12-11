@@ -11,9 +11,9 @@ Plug 'vim-airline/vim-airline-themes'
 Plug 'easymotion/vim-easymotion'
 
 Plug 'xolox/vim-misc' " needed for vim-session
-Plug 'xolox/vim-session' " Store state across vim
+Plug 'xolox/vim-session' " store state across vim
 Plug 'ctrlpvim/ctrlp.vim' " search files and buffer
-Plug 'dense-analysis/ale' " Linting and fixing async
+Plug 'dense-analysis/ale' " linting and fixing async
 Plug 'godlygeek/tabular' " align tabular data
 Plug 'terryma/vim-multiple-cursors'
 
@@ -462,13 +462,16 @@ autocmd BufEnter * if &filetype == "" | setlocal ft=txt | endif
 autocmd BufEnter * if &filetype == "hql" | setlocal ft=sql | endif
 
 " Ale linting and fixing
+" To add a linter, make sure the binary is available
 let g:ale_linters={
 \'python': ['pylint'],
+\'r': ['lintr'],
 \}
 
 let g:ale_fixers = {
 \'*': ['remove_trailing_lines', 'trim_whitespace'],
 \'python': ['black'],
+\'r': [],
 \}
 
 let g:ale_fix_on_save = 1

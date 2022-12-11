@@ -204,6 +204,7 @@
                  "com.spotify.client",
                  "com.apple.ActivityMonitor",
                  "com.apple.Stickies",
+                 "desktop.WhatsApp",
                  ],
     "floating-is-blacklist": true,
     "float-small-windows": true,

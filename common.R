@@ -1,22 +1,34 @@
+libraries = c('ggplot2',
+              'dplyr',
+              'readr',
+              'scales',
+              'glue',
+              'plotly',
+              'lintr',
+              'styler',
+)
+
+# TODO install libraries if not installed already
+
+# load libraries
 library(ggplot2)
 library(dplyr)
 library(readr)
 library(scales)
 library(glue)
-
 library(plotly)
 
 angled_x_axis = function(angle=60){
   theme(axis.text.x = element_text(angle = angle, hjust = 1))
 }
 
-# This method calculates the avg cardinality (cardinality being how many values does 
-# one value in column c1 coexist in column c2). If the avg cardinality is 
+# This method calculates the avg cardinality (cardinality being how many values does
+# one value in column c1 coexist in column c2). If the avg cardinality is
 # 1, it means that c2 is a subset of c1
 # if you look at the lower half (under the diagonal). You will see what columns
-# strictly coexist with one value (so you can derive hierarchical structure 
+# strictly coexist with one value (so you can derive hierarchical structure
 # Note that the matrix is NOT symmetric.
-# Note that because we of naming conflicts, numbers that are very close to 1 
+# Note that because we of naming conflicts, numbers that are very close to 1
 # (maybe) should be considered as hierarchical. As there might be naming conflicts
 avg_cardinality_matrix = function(df){
   avg_cardinality = list()
