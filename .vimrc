@@ -464,14 +464,15 @@ autocmd BufEnter * if &filetype == "hql" | setlocal ft=sql | endif
 " Ale linting and fixing
 " To add a linter, make sure the binary is available
 let g:ale_linters={
-\'python': ['pylint'],
-\'r': ['lintr'],
+\'*': ['remove_trailing_lines', 'trim_whitespace'],
+\'python': ['pylint', 'flake8'],
+\'r': ['languageserver'],
 \}
 
 let g:ale_fixers = {
 \'*': ['remove_trailing_lines', 'trim_whitespace'],
 \'python': ['black'],
-\'r': [],
+\'r': ['styler'],
 \}
 
 let g:ale_fix_on_save = 1
@@ -562,7 +563,7 @@ let @s='<17>v<04><04><15><04>:set scrollbind=<80>kb<0d><17>h:set scb<0d>'
 "colorscheme hybrid
 "set background=dark
 
-colorscheme Tomorrow
+colorscheme Tomorrow-Night
 "set background=light
 
 

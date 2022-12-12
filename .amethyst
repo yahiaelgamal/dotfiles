@@ -205,6 +205,7 @@
                  "com.apple.ActivityMonitor",
                  "com.apple.Stickies",
                  "desktop.WhatsApp",
+                 "com.iriun.webcam",
                  ],
     "floating-is-blacklist": true,
     "float-small-windows": true,
