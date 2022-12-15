@@ -8,6 +8,8 @@ libraries <- c(
   "languageserver", # needed for lintr
   "lintr",
   "styler",
+  "janitor",
+  "skimr"
 )
 
 # TODO install libraries if not installed already
@@ -54,6 +56,9 @@ avg_cardinality_matrix <- function(df) {
   avg_cardinality_list <- apply(mat, 1, function(x) {
     mean(unlist(x))
   })
-  sorted_indices <- sort(avg_cardinality_list, decreasing = TRUE, index.return = TRUE)$ix
+  sorted_indices <- sort(avg_cardinality_list,
+    decreasing = TRUE,
+    index.return = TRUE
+  )$ix
   return(mat[sorted_indices, sorted_indices])
 }

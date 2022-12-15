@@ -206,6 +206,8 @@
                  "com.apple.Stickies",
                  "desktop.WhatsApp",
                  "com.iriun.webcam",
+                 "app.raindrop.io",
+                 "com.toggl.daneel",
                  ],
     "floating-is-blacklist": true,
     "float-small-windows": true,
@@ -214,5 +216,6 @@
     "mouse-resizes-windows": true,
     "enables-layout-hud": true,
     "new-windows-to-main": false,
+    "follow-space-thrown-windows": false,
     "enables-layout-hud-on-space-change": true
 }
