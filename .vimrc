@@ -21,6 +21,7 @@ Plug 'terryma/vim-multiple-cursors'
 Plug 'Raimondi/delimitMate' " auto insertion of )]}
 Plug 'tpope/vim-surround' " move around and edit surrounding elements
 Plug 'matze/vim-move'
+Plug 'Yggdroot/indentLine' " sets indent guidelines
 "Plug 'elzr/vim-json'
 
 "Plug 'integralist/vim-mypy'
@@ -463,9 +464,11 @@ autocmd BufEnter * if &filetype == "hql" | setlocal ft=sql | endif
 
 " Ale linting and fixing
 " To add a linter, make sure the binary is available
+"
+let g:ale_virtualenv_dir_names = []
 let g:ale_linters={
 \'*': ['remove_trailing_lines', 'trim_whitespace'],
-\'python': ['pylint', 'flake8'],
+\'python': ['flake8'],
 \'r': ['languageserver'],
 \}
 
