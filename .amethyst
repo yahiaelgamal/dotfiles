@@ -2,11 +2,11 @@
     "URL":  "https://github.com/ianyh/Amethyst/blob/3c2835adacc1fea50ab7853b2a96d78e943faa5c/docs/configuration-files.md",
     "LAYOUTS": "----------------------",
     "layouts": [
+        "floating",
         "fullscreen",
         "two-pane",
         "middle-wide",
         "tall-right",
-        "floating"
     ],
 
     "MODIFIERS": "----------------------",
@@ -216,6 +216,6 @@
     "mouse-resizes-windows": true,
     "enables-layout-hud": true,
     "new-windows-to-main": false,
-    "follow-space-thrown-windows": false,
+    "follow-space-thrown-windows": true,
     "enables-layout-hud-on-space-change": true
 }
