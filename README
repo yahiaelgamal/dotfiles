@@ -3,3 +3,6 @@ for matplotlibrc it should be linked inside .matplotlib
 
 For instance:
 `ln -s ~/dotfiles/matplotlibrc .matplotlib`
+
+There is also a .config director. just
+`cd && ln -s ~/dotfiles/.config .config`

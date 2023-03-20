@@ -563,10 +563,10 @@ let @r='jVnkytkptjnn'
 " split the current window and scrollbind
 let @s='<17>v<04><04><15><04>:set scrollbind=<80>kb<0d><17>h:set scb<0d>'
 
-"colorscheme hybrid
+colorscheme hybrid
 "set background=dark
 
-colorscheme Tomorrow-Night
+"colorscheme Tomorrow-Night
 "set background=light
 
 
