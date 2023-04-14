@@ -525,10 +525,10 @@ let delimitMate_expand_cr = 1
 let delimitMate_expand_space = 1
 "let g:SuperTabCrMapping = 0 " fix the problem
 
-" move to end of pasted text, to ease multiple pastes
-vnoremap y y`]
-vnoremap p p`]
-nnoremap p p`]
+" move to end of pasted (yanked) text, to ease multiple pastes
+"vnoremap y y`]
+"vnoremap p p`]
+"nnoremap p p`]
 
 " don't move the cursor to the start of line when jumping
 set nosol
