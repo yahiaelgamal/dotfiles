@@ -114,6 +114,54 @@
                         ]
                     },
                     {
+                        "description": "f10 to mute",
+                        "manipulators": [
+                            {
+                                "from": {
+                                    "key_code": "f10"
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "mute"
+                                    }
+                                ],
+                                "type": "basic"
+                            }
+                        ]
+                    },
+                    {
+                        "description": "f11 to volume_decrement",
+                        "manipulators": [
+                            {
+                                "from": {
+                                    "key_code": "f11"
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "volume_decrement"
+                                    }
+                                ],
+                                "type": "basic"
+                            }
+                        ]
+                    },
+                    {
+                        "description": "f12 to volume_increment",
+                        "manipulators": [
+                            {
+                                "from": {
+                                    "key_code": "f12"
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "volume_increment"
+                                    }
+                                ],
+                                "type": "basic"
+                            }
+                        ]
+                    },
+                    {
                         "description": "control + f1 to f1",
                         "manipulators": [
                             {
@@ -337,7 +385,7 @@
                                 },
                                 "to": [
                                     {
-                                        "key_code": "f10"
+                                        "key_code": "f11"
                                     }
                                 ],
                                 "type": "basic"
@@ -358,7 +406,7 @@
                                 },
                                 "to": [
                                     {
-                                        "key_code": "f10"
+                                        "key_code": "f12"
                                     }
                                 ],
                                 "type": "basic"

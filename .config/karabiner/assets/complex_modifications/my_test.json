@@ -98,6 +98,54 @@
                     ]
                 },
                 {
+                    "description":"f10 to mute",
+                    "manipulators": [
+                        {
+                            "type": "basic",
+                            "from": {
+                                "key_code": "f10"
+                            },
+                            "to": [
+                                {
+                                    "key_code": "mute"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "description":"f11 to volume_decrement",
+                    "manipulators": [
+                        {
+                            "type": "basic",
+                            "from": {
+                                "key_code": "f11"
+                            },
+                            "to": [
+                                {
+                                    "key_code": "volume_decrement"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "description":"f12 to volume_increment",
+                    "manipulators": [
+                        {
+                            "type": "basic",
+                            "from": {
+                                "key_code": "f12"
+                            },
+                            "to": [
+                                {
+                                    "key_code": "volume_increment"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
                     "description":"control + f1 to f1",
                     "manipulators": [
                         {
@@ -322,7 +370,7 @@
                             },
                             "to": [
                                 {
-                                    "key_code": "f10"
+                                    "key_code": "f11"
                                 }
                             ]
                         }
@@ -343,7 +391,7 @@
                             },
                             "to": [
                                 {
-                                    "key_code": "f10"
+                                    "key_code": "f12"
                                 }
                             ]
                         }
