@@ -29,6 +29,10 @@ Plug 'Yggdroot/indentLine' " sets indent guidelines
 "Plug 'autowitch/hive.vim'
 "Plug 'ervandew/snipmate.vim'
 "Plug 'benmills/vimux'
+"
+" Follow https://github.com/ycm-core/YouCompleteMe#installation) for
+" installation
+Plug 'ycm-core/YouCompleteMe' " Auto-compelte
 
 
 "
@@ -468,9 +472,11 @@ autocmd BufEnter * if &filetype == "hql" | setlocal ft=sql | endif
 let g:ale_virtualenv_dir_names = []
 let g:ale_linters={
 \'*': ['remove_trailing_lines', 'trim_whitespace'],
-\'python': ['flake8'],
+\'python': ['flake8', 'mypy'],
 \'r': ['languageserver'],
 \}
+
+" pylint is good, but too strinct
 
 let g:ale_fixers = {
 \'*': ['remove_trailing_lines', 'trim_whitespace'],
@@ -633,3 +639,13 @@ let g:airline_section_c = '%t'
 " only works in gvim, maybe move to .gvimrc or when alt button is not Meta
 let g:move_normal_option =1
 let g:move_key_modifier = 'A'
+
+
+
+" YouCompleteMe Configs
+" Use homebrew's clangd (for YouCompleteMe) (from https://github.com/ycm-core/YouCompleteMe#installation)
+let g:ycm_clangd_binary_path = trim(system('brew --prefix llvm')).'/bin/clangd'
+
+" we can go back using c-i and c-o
+noremap <leader>jd :YcmCompleter GoTo<CR>
+nmap <silent> <leader>h <plug>(YCMHover)

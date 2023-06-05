@@ -6,3 +6,5 @@ For instance:
 
 There is also a .config director. just
 `cd && ln -s ~/dotfiles/.config .config`
+
+there is a .config folder that is very important for karabinar
