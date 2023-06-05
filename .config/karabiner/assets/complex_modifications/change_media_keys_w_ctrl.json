@@ -1,0 +1,236 @@
+{
+    "title": "Set F keys to media, and then ctrl+media -> Fkeys:",
+    "rules": [
+                {
+                    "description":"control + display_brightness_decrement to f1",
+                    "manipulators": [
+                        {
+                            "type": "basic",¦
+                            "from": {
+                                "consumer_key_code": "display_brightness_decrement",
+                                "modifiers": {
+                                    "mandatory": [
+                                        "control"
+                                    ]
+                                }
+                            },
+                            "to": [
+                                {
+                                    "key_code": "f1"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "description":"control + display_brightness_increment to f2",
+                    "manipulators": [
+                        {
+                            "type": "basic",
+                            "from": {
+                                "consumer_key_code": "display_brightness_increment",
+                                "modifiers": {
+                                    "mandatory": [
+                                        "control"
+                                    ]
+                                }
+                            },
+                            "to": [
+                                {
+                                    "key_code": "f2"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "description":"control + mission_control to f3",
+                    "manipulators": [
+                        {
+                            "type": "basic",
+                            "from": {
+                                "apple_vendor_keyboard_key_code": "mission_control",
+                                "modifiers": {
+                                    "mandatory": [
+                                        "control"
+                                    ]
+                                }
+                            },
+                            "to": [
+                                {
+                                    "key_code": "f3"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "description":"control + spotlight to f4",
+                    "manipulators": [
+                        {
+                            "type": "basic",
+                            "from": {
+                                "apple_vendor_keyboard_key_code": "spotlight",
+                                "modifiers": {
+                                    "mandatory": [
+                                        "control"
+                                    ]
+                                }
+                            },
+                            "to": [
+                                {
+                                    "key_code": "f4"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "description":"control + dictation to f5",
+                    "manipulators": [
+                        {
+                            "type": "basic",
+                            "from": {
+                                "consumer_key_code": "dictation",
+                                "modifiers": {
+                                    "mandatory": [
+                                        "control"
+                                    ]
+                                }
+                            },
+                            "to": [
+                                {
+                                    "key_code": "f5"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "description":"control + rewind to f7",
+                    "manipulators": [
+                        {
+                            "type": "basic",
+                            "from": {
+                                "consumer_key_code": "rewind",
+                                "modifiers": {
+                                    "mandatory": [
+                                        "control"
+                                    ]
+                                }
+                            },
+                            "to": [
+                                {
+                                    "key_code": "f7"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "description":"control + play_or_pause to f8",
+                    "manipulators": [
+                        {
+                            "type": "basic",
+                            "from": {
+                                "consumer_key_code": "play_or_pause",
+                                "modifiers": {
+                                    "mandatory": [
+                                        "control"
+                                    ]
+                                }
+                            },
+                            "to": [
+                                {
+                                    "key_code": "f8"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "description":"control + fast_forward to f9",
+                    "manipulators": [
+                        {
+                            "type": "basic",
+                            "from": {
+                                "consumer_key_code": "fast_forward",
+                                "modifiers": {
+                                    "mandatory": [
+                                        "control"
+                                    ]
+                                }
+                            },
+                            "to": [
+                                {
+                                    "key_code": "f9"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "description":"control + mute to f10",
+                    "manipulators": [
+                        {
+                            "type": "basic",
+                            "from": {
+                                "consumer_key_code": "mute",
+                                "modifiers": {
+                                    "mandatory": [
+                                        "control"
+                                    ]
+                                }
+                            },
+                            "to": [
+                                {
+                                    "key_code": "f10"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "description":"control + volume_decrement to f11",
+                    "manipulators": [
+                        {
+                            "type": "basic",
+                            "from": {
+                                "consumer_key_code": "volume_decrement",
+                                "modifiers": {
+                                    "mandatory": [
+                                        "control"
+                                    ]
+                                }
+                            },
+                            "to": [
+                                {
+                                    "key_code": "f11"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "description":"control + volume_increment to f12",
+                    "manipulators": [
+                        {
+                            "type": "basic",
+                            "from": {
+                                "consumer_key_code": "volume_increment",
+                                "modifiers": {
+                                    "mandatory": [
+                                        "control"
+                                    ]
+                                }
+                            },
+                            "to": [
+                                {
+                                    "key_code": "f12"
+                                }
+                            ]
+                        }
+                    ]
+                }
+	]
+}
