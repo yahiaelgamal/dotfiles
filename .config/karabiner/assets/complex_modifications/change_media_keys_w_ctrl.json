@@ -5,7 +5,7 @@
                     "description":"control + display_brightness_decrement to f1",
                     "manipulators": [
                         {
-                            "type": "basic",¦
+                            "type": "basic",
                             "from": {
                                 "consumer_key_code": "display_brightness_decrement",
                                 "modifiers": {

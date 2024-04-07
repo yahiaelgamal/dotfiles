@@ -18,15 +18,26 @@
                 },
                 "rules": [
                     {
-                        "description": " f1 to display_brightness_decrement",
+                        "description": "display setting using alt+f2",
                         "manipulators": [
                             {
                                 "from": {
-                                    "key_code": "f1"
+                                    "key_code": "f2",
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "option"
+                                        ],
+                                        "optional": [
+                                            "any"
+                                        ]
+                                    }
                                 },
                                 "to": [
                                     {
-                                        "key_code": "display_brightness_decrement"
+                                        "key_code": "display_brightness_increment",
+                                        "modifiers": [
+                                            "option"
+                                        ]
                                     }
                                 ],
                                 "type": "basic"
@@ -34,15 +45,19 @@
                         ]
                     },
                     {
-                        "description": " f2 to display_brightness_increment",
+                        "description": "f1 => display_brightness_decrement",
                         "manipulators": [
                             {
                                 "from": {
-                                    "key_code": "f2"
+                                    "key_code": "f1",
+                                    "modifiers": {
+                                        "mandatory": []
+                                    }
                                 },
                                 "to": [
                                     {
-                                        "key_code": "display_brightness_increment"
+                                        "key_code": "display_brightness_decrement",
+                                        "modifiers": []
                                     }
                                 ],
                                 "type": "basic"
@@ -50,119 +65,7 @@
                         ]
                     },
                     {
-                        "description": " f3 to mission_control",
-                        "manipulators": [
-                            {
-                                "from": {
-                                    "key_code": "f3"
-                                },
-                                "to": [
-                                    {
-                                        "key_code": "mission_control"
-                                    }
-                                ],
-                                "type": "basic"
-                            }
-                        ]
-                    },
-                    {
-                        "description": " f7 to rewind",
-                        "manipulators": [
-                            {
-                                "from": {
-                                    "key_code": "f7"
-                                },
-                                "to": [
-                                    {
-                                        "key_code": "rewind"
-                                    }
-                                ],
-                                "type": "basic"
-                            }
-                        ]
-                    },
-                    {
-                        "description": " f8 to play_or_pause",
-                        "manipulators": [
-                            {
-                                "from": {
-                                    "key_code": "f8"
-                                },
-                                "to": [
-                                    {
-                                        "key_code": "play_or_pause"
-                                    }
-                                ],
-                                "type": "basic"
-                            }
-                        ]
-                    },
-                    {
-                        "description": " f9 to fast_forward",
-                        "manipulators": [
-                            {
-                                "from": {
-                                    "key_code": "f9"
-                                },
-                                "to": [
-                                    {
-                                        "key_code": "fast_forward"
-                                    }
-                                ],
-                                "type": "basic"
-                            }
-                        ]
-                    },
-                    {
-                        "description": "f10 to mute",
-                        "manipulators": [
-                            {
-                                "from": {
-                                    "key_code": "f10"
-                                },
-                                "to": [
-                                    {
-                                        "key_code": "mute"
-                                    }
-                                ],
-                                "type": "basic"
-                            }
-                        ]
-                    },
-                    {
-                        "description": "f11 to volume_decrement",
-                        "manipulators": [
-                            {
-                                "from": {
-                                    "key_code": "f11"
-                                },
-                                "to": [
-                                    {
-                                        "key_code": "volume_decrement"
-                                    }
-                                ],
-                                "type": "basic"
-                            }
-                        ]
-                    },
-                    {
-                        "description": "f12 to volume_increment",
-                        "manipulators": [
-                            {
-                                "from": {
-                                    "key_code": "f12"
-                                },
-                                "to": [
-                                    {
-                                        "key_code": "volume_increment"
-                                    }
-                                ],
-                                "type": "basic"
-                            }
-                        ]
-                    },
-                    {
-                        "description": "control + f1 to f1",
+                        "description": "control + f1 => f1",
                         "manipulators": [
                             {
                                 "from": {
@@ -175,7 +78,8 @@
                                 },
                                 "to": [
                                     {
-                                        "key_code": "f1"
+                                        "key_code": "f1",
+                                        "modifiers": []
                                     }
                                 ],
                                 "type": "basic"
@@ -183,7 +87,7 @@
                         ]
                     },
                     {
-                        "description": "control + f2 to f2",
+                        "description": "control + f2 => f2",
                         "manipulators": [
                             {
                                 "from": {
@@ -196,7 +100,8 @@
                                 },
                                 "to": [
                                     {
-                                        "key_code": "f2"
+                                        "key_code": "f2",
+                                        "modifiers": []
                                     }
                                 ],
                                 "type": "basic"
@@ -204,251 +109,19 @@
                         ]
                     },
                     {
-                        "description": "control + f3 to f3",
+                        "description": "f2 => display_brightness_increment",
                         "manipulators": [
                             {
                                 "from": {
-                                    "key_code": "f3",
+                                    "key_code": "f2",
                                     "modifiers": {
-                                        "mandatory": [
-                                            "control"
-                                        ]
+                                        "mandatory": []
                                     }
                                 },
                                 "to": [
                                     {
-                                        "key_code": "f3"
-                                    }
-                                ],
-                                "type": "basic"
-                            }
-                        ]
-                    },
-                    {
-                        "description": "control + f4 to f4",
-                        "manipulators": [
-                            {
-                                "from": {
-                                    "key_code": "f4",
-                                    "modifiers": {
-                                        "mandatory": [
-                                            "control"
-                                        ]
-                                    }
-                                },
-                                "to": [
-                                    {
-                                        "key_code": "f4"
-                                    }
-                                ],
-                                "type": "basic"
-                            }
-                        ]
-                    },
-                    {
-                        "description": "control + f5 to f5",
-                        "manipulators": [
-                            {
-                                "from": {
-                                    "key_code": "f5",
-                                    "modifiers": {
-                                        "mandatory": [
-                                            "control"
-                                        ]
-                                    }
-                                },
-                                "to": [
-                                    {
-                                        "key_code": "f5"
-                                    }
-                                ],
-                                "type": "basic"
-                            }
-                        ]
-                    },
-                    {
-                        "description": "control + f6 to f6",
-                        "manipulators": [
-                            {
-                                "from": {
-                                    "key_code": "f6",
-                                    "modifiers": {
-                                        "mandatory": [
-                                            "control"
-                                        ]
-                                    }
-                                },
-                                "to": [
-                                    {
-                                        "key_code": "f6"
-                                    }
-                                ],
-                                "type": "basic"
-                            }
-                        ]
-                    },
-                    {
-                        "description": "control + f7 to f7",
-                        "manipulators": [
-                            {
-                                "from": {
-                                    "key_code": "f7",
-                                    "modifiers": {
-                                        "mandatory": [
-                                            "control"
-                                        ]
-                                    }
-                                },
-                                "to": [
-                                    {
-                                        "key_code": "f7"
-                                    }
-                                ],
-                                "type": "basic"
-                            }
-                        ]
-                    },
-                    {
-                        "description": "control + f8 to f8",
-                        "manipulators": [
-                            {
-                                "from": {
-                                    "key_code": "f8",
-                                    "modifiers": {
-                                        "mandatory": [
-                                            "control"
-                                        ]
-                                    }
-                                },
-                                "to": [
-                                    {
-                                        "key_code": "f8"
-                                    }
-                                ],
-                                "type": "basic"
-                            }
-                        ]
-                    },
-                    {
-                        "description": "control + f9 to f9",
-                        "manipulators": [
-                            {
-                                "from": {
-                                    "key_code": "f9",
-                                    "modifiers": {
-                                        "mandatory": [
-                                            "control"
-                                        ]
-                                    }
-                                },
-                                "to": [
-                                    {
-                                        "key_code": "f9"
-                                    }
-                                ],
-                                "type": "basic"
-                            }
-                        ]
-                    },
-                    {
-                        "description": "control + f10 to f10",
-                        "manipulators": [
-                            {
-                                "from": {
-                                    "key_code": "f10",
-                                    "modifiers": {
-                                        "mandatory": [
-                                            "control"
-                                        ]
-                                    }
-                                },
-                                "to": [
-                                    {
-                                        "key_code": "f10"
-                                    }
-                                ],
-                                "type": "basic"
-                            }
-                        ]
-                    },
-                    {
-                        "description": "control + f11 to f11",
-                        "manipulators": [
-                            {
-                                "from": {
-                                    "key_code": "f11",
-                                    "modifiers": {
-                                        "mandatory": [
-                                            "control"
-                                        ]
-                                    }
-                                },
-                                "to": [
-                                    {
-                                        "key_code": "f11"
-                                    }
-                                ],
-                                "type": "basic"
-                            }
-                        ]
-                    },
-                    {
-                        "description": "control + f12 to f12",
-                        "manipulators": [
-                            {
-                                "from": {
-                                    "key_code": "f12",
-                                    "modifiers": {
-                                        "mandatory": [
-                                            "control"
-                                        ]
-                                    }
-                                },
-                                "to": [
-                                    {
-                                        "key_code": "f12"
-                                    }
-                                ],
-                                "type": "basic"
-                            }
-                        ]
-                    },
-                    {
-                        "description": "control + home to f11",
-                        "manipulators": [
-                            {
-                                "from": {
-                                    "key_code": "home",
-                                    "modifiers": {
-                                        "mandatory": [
-                                            "control"
-                                        ]
-                                    }
-                                },
-                                "to": [
-                                    {
-                                        "key_code": "f11"
-                                    }
-                                ],
-                                "type": "basic"
-                            }
-                        ]
-                    },
-                    {
-                        "description": "control + end to f12",
-                        "manipulators": [
-                            {
-                                "from": {
-                                    "key_code": "end",
-                                    "modifiers": {
-                                        "mandatory": [
-                                            "control"
-                                        ]
-                                    }
-                                },
-                                "to": [
-                                    {
-                                        "key_code": "f12"
+                                        "key_code": "display_brightness_increment",
+                                        "modifiers": []
                                     }
                                 ],
                                 "type": "basic"
@@ -461,6 +134,7 @@
                 {
                     "disable_built_in_keyboard_if_exists": false,
                     "fn_function_keys": [],
+                    "game_pad_swap_sticks": false,
                     "identifiers": {
                         "is_game_pad": false,
                         "is_keyboard": true,
@@ -470,6 +144,12 @@
                     },
                     "ignore": false,
                     "manipulate_caps_lock_led": true,
+                    "mouse_flip_horizontal_wheel": false,
+                    "mouse_flip_vertical_wheel": false,
+                    "mouse_flip_x": false,
+                    "mouse_flip_y": false,
+                    "mouse_swap_wheels": false,
+                    "mouse_swap_xy": false,
                     "simple_modifications": [
                         {
                             "from": {
@@ -497,6 +177,7 @@
                 {
                     "disable_built_in_keyboard_if_exists": false,
                     "fn_function_keys": [],
+                    "game_pad_swap_sticks": false,
                     "identifiers": {
                         "is_game_pad": false,
                         "is_keyboard": false,
@@ -506,12 +187,19 @@
                     },
                     "ignore": true,
                     "manipulate_caps_lock_led": false,
+                    "mouse_flip_horizontal_wheel": false,
+                    "mouse_flip_vertical_wheel": false,
+                    "mouse_flip_x": false,
+                    "mouse_flip_y": false,
+                    "mouse_swap_wheels": false,
+                    "mouse_swap_xy": false,
                     "simple_modifications": [],
                     "treat_as_built_in_keyboard": false
                 },
                 {
                     "disable_built_in_keyboard_if_exists": false,
                     "fn_function_keys": [],
+                    "game_pad_swap_sticks": false,
                     "identifiers": {
                         "is_game_pad": false,
                         "is_keyboard": true,
@@ -521,6 +209,12 @@
                     },
                     "ignore": true,
                     "manipulate_caps_lock_led": true,
+                    "mouse_flip_horizontal_wheel": false,
+                    "mouse_flip_vertical_wheel": false,
+                    "mouse_flip_x": false,
+                    "mouse_flip_y": false,
+                    "mouse_swap_wheels": false,
+                    "mouse_swap_xy": false,
                     "simple_modifications": [
                         {
                             "from": {
@@ -558,6 +252,7 @@
                 {
                     "disable_built_in_keyboard_if_exists": false,
                     "fn_function_keys": [],
+                    "game_pad_swap_sticks": false,
                     "identifiers": {
                         "is_game_pad": false,
                         "is_keyboard": true,
@@ -567,6 +262,12 @@
                     },
                     "ignore": false,
                     "manipulate_caps_lock_led": true,
+                    "mouse_flip_horizontal_wheel": false,
+                    "mouse_flip_vertical_wheel": false,
+                    "mouse_flip_x": false,
+                    "mouse_flip_y": false,
+                    "mouse_swap_wheels": false,
+                    "mouse_swap_xy": false,
                     "simple_modifications": [
                         {
                             "from": {
@@ -604,6 +305,7 @@
                 {
                     "disable_built_in_keyboard_if_exists": false,
                     "fn_function_keys": [],
+                    "game_pad_swap_sticks": false,
                     "identifiers": {
                         "is_game_pad": false,
                         "is_keyboard": true,
@@ -613,6 +315,12 @@
                     },
                     "ignore": true,
                     "manipulate_caps_lock_led": true,
+                    "mouse_flip_horizontal_wheel": false,
+                    "mouse_flip_vertical_wheel": false,
+                    "mouse_flip_x": false,
+                    "mouse_flip_y": false,
+                    "mouse_swap_wheels": false,
+                    "mouse_swap_xy": false,
                     "simple_modifications": [],
                     "treat_as_built_in_keyboard": false
                 },
@@ -640,6 +348,7 @@
                             ]
                         }
                     ],
+                    "game_pad_swap_sticks": false,
                     "identifiers": {
                         "is_game_pad": false,
                         "is_keyboard": true,
@@ -649,6 +358,12 @@
                     },
                     "ignore": false,
                     "manipulate_caps_lock_led": true,
+                    "mouse_flip_horizontal_wheel": false,
+                    "mouse_flip_vertical_wheel": false,
+                    "mouse_flip_x": false,
+                    "mouse_flip_y": false,
+                    "mouse_swap_wheels": false,
+                    "mouse_swap_xy": false,
                     "simple_modifications": [
                         {
                             "from": {
@@ -686,6 +401,7 @@
                 {
                     "disable_built_in_keyboard_if_exists": false,
                     "fn_function_keys": [],
+                    "game_pad_swap_sticks": false,
                     "identifiers": {
                         "is_game_pad": false,
                         "is_keyboard": true,
@@ -695,12 +411,19 @@
                     },
                     "ignore": false,
                     "manipulate_caps_lock_led": true,
+                    "mouse_flip_horizontal_wheel": false,
+                    "mouse_flip_vertical_wheel": false,
+                    "mouse_flip_x": false,
+                    "mouse_flip_y": false,
+                    "mouse_swap_wheels": false,
+                    "mouse_swap_xy": false,
                     "simple_modifications": [],
                     "treat_as_built_in_keyboard": false
                 },
                 {
                     "disable_built_in_keyboard_if_exists": false,
                     "fn_function_keys": [],
+                    "game_pad_swap_sticks": false,
                     "identifiers": {
                         "is_game_pad": false,
                         "is_keyboard": false,
@@ -710,12 +433,19 @@
                     },
                     "ignore": true,
                     "manipulate_caps_lock_led": false,
+                    "mouse_flip_horizontal_wheel": false,
+                    "mouse_flip_vertical_wheel": false,
+                    "mouse_flip_x": false,
+                    "mouse_flip_y": false,
+                    "mouse_swap_wheels": false,
+                    "mouse_swap_xy": false,
                     "simple_modifications": [],
                     "treat_as_built_in_keyboard": false
                 },
                 {
                     "disable_built_in_keyboard_if_exists": false,
                     "fn_function_keys": [],
+                    "game_pad_swap_sticks": false,
                     "identifiers": {
                         "is_game_pad": false,
                         "is_keyboard": true,
@@ -725,6 +455,12 @@
                     },
                     "ignore": true,
                     "manipulate_caps_lock_led": true,
+                    "mouse_flip_horizontal_wheel": false,
+                    "mouse_flip_vertical_wheel": false,
+                    "mouse_flip_x": false,
+                    "mouse_flip_y": false,
+                    "mouse_swap_wheels": false,
+                    "mouse_swap_xy": false,
                     "simple_modifications": [],
                     "treat_as_built_in_keyboard": false
                 }
@@ -736,7 +472,7 @@
                     },
                     "to": [
                         {
-                            "consumer_key_code": "display_brightness_decrement"
+                            "key_code": "f1"
                         }
                     ]
                 },
@@ -746,7 +482,7 @@
                     },
                     "to": [
                         {
-                            "consumer_key_code": "display_brightness_increment"
+                            "key_code": "f2"
                         }
                     ]
                 },

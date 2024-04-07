@@ -290,7 +290,7 @@ noremap <leader>s : set lines=120 columns=100<CR>
 noremap <leader>b : set lines=2000 columns=2000<CR>
 
 " JSON formatter
-noremap <leader>j :%!python -m json.tool<CR>
+noremap <leader>j :%!python3 -m json.tool<CR>
 
 nnoremap <leader>d :execute 'NERDTreeToggle' . getcwd()<CR>
 
