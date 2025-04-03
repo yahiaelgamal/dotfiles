@@ -1,0 +1,443 @@
+{
+    "title": "Yahia Code:",
+    "rules": [
+                {
+                    "description":" f1 to display_brightness_decrement",
+                    "manipulators": [
+                        {
+                            "type": "basic",
+                            "from": {
+                                "key_code": "f1"
+                            },
+                            "to": [
+                                {
+                                    "key_code": "display_brightness_decrement"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "description":" f2 to display_brightness_increment",
+                    "manipulators": [
+                        {
+                            "type": "basic",
+                            "from": {
+                                "key_code": "f2"
+                            },
+                            "to": [
+                                {
+                                    "key_code": "display_brightness_increment"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "description":" f3 to mission_control",
+                    "manipulators": [
+                        {
+                            "type": "basic",
+                            "from": {
+                                "key_code": "f3"
+                            },
+                            "to": [
+                                {
+                                    "key_code": "mission_control"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "description":" f7 to rewind",
+                    "manipulators": [
+                        {
+                            "type": "basic",
+                            "from": {
+                                "key_code": "f7"
+                            },
+                            "to": [
+                                {
+                                    "key_code": "rewind"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "description":" f8 to play_or_pause",
+                    "manipulators": [
+                        {
+                            "type": "basic",
+                            "from": {
+                                "key_code": "f8"
+                            },
+                            "to": [
+                                {
+                                    "key_code": "play_or_pause"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "description":" f9 to fast_forward",
+                    "manipulators": [
+                        {
+                            "type": "basic",
+                            "from": {
+                                "key_code": "f9"
+                            },
+                            "to": [
+                                {
+                                    "key_code": "fast_forward"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "description":"f10 to mute",
+                    "manipulators": [
+                        {
+                            "type": "basic",
+                            "from": {
+                                "key_code": "f10"
+                            },
+                            "to": [
+                                {
+                                    "key_code": "mute"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "description":"f11 to volume_decrement",
+                    "manipulators": [
+                        {
+                            "type": "basic",
+                            "from": {
+                                "key_code": "f11"
+                            },
+                            "to": [
+                                {
+                                    "key_code": "volume_decrement"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "description":"f12 to volume_increment",
+                    "manipulators": [
+                        {
+                            "type": "basic",
+                            "from": {
+                                "key_code": "f12"
+                            },
+                            "to": [
+                                {
+                                    "key_code": "volume_increment"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "description":"control + f1 to f1",
+                    "manipulators": [
+                        {
+                            "type": "basic",
+                            "from": {
+                                "key_code": "f1",
+                                "modifiers": {
+                                    "mandatory": [
+                                        "control"
+                                    ]
+                                }
+                            },
+                            "to": [
+                                {
+                                    "key_code": "f1"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "description":"control + f2 to f2",
+                    "manipulators": [
+                        {
+                            "type": "basic",
+                            "from": {
+                                "key_code": "f2",
+                                "modifiers": {
+                                    "mandatory": [
+                                        "control"
+                                    ]
+                                }
+                            },
+                            "to": [
+                                {
+                                    "key_code": "f2"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "description":"control + f3 to f3",
+                    "manipulators": [
+                        {
+                            "type": "basic",
+                            "from": {
+                                "key_code": "f3",
+                                "modifiers": {
+                                    "mandatory": [
+                                        "control"
+                                    ]
+                                }
+                            },
+                            "to": [
+                                {
+                                    "key_code": "f3"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "description":"control + f4 to f4",
+                    "manipulators": [
+                        {
+                            "type": "basic",
+                            "from": {
+                                "key_code": "f4",
+                                "modifiers": {
+                                    "mandatory": [
+                                        "control"
+                                    ]
+                                }
+                            },
+                            "to": [
+                                {
+                                    "key_code": "f4"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "description":"control + f5 to f5",
+                    "manipulators": [
+                        {
+                            "type": "basic",
+                            "from": {
+                                "key_code": "f5",
+                                "modifiers": {
+                                    "mandatory": [
+                                        "control"
+                                    ]
+                                }
+                            },
+                            "to": [
+                                {
+                                    "key_code": "f5"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "description":"control + f6 to f6",
+                    "manipulators": [
+                        {
+                            "type": "basic",
+                            "from": {
+                                "key_code": "f6",
+                                "modifiers": {
+                                    "mandatory": [
+                                        "control"
+                                    ]
+                                }
+                            },
+                            "to": [
+                                {
+                                    "key_code": "f6"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "description":"control + f7 to f7",
+                    "manipulators": [
+                        {
+                            "type": "basic",
+                            "from": {
+                                "key_code": "f7",
+                                "modifiers": {
+                                    "mandatory": [
+                                        "control"
+                                    ]
+                                }
+                            },
+                            "to": [
+                                {
+                                    "key_code": "f7"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "description":"control + f8 to f8",
+                    "manipulators": [
+                        {
+                            "type": "basic",
+                            "from": {
+                                "key_code": "f8",
+                                "modifiers": {
+                                    "mandatory": [
+                                        "control"
+                                    ]
+                                }
+                            },
+                            "to": [
+                                {
+                                    "key_code": "f8"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "description":"control + f9 to f9",
+                    "manipulators": [
+                        {
+                            "type": "basic",
+                            "from": {
+                                "key_code": "f9",
+                                "modifiers": {
+                                    "mandatory": [
+                                        "control"
+                                    ]
+                                }
+                            },
+                            "to": [
+                                {
+                                    "key_code": "f9"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "description":"control + f10 to f10",
+                    "manipulators": [
+                        {
+                            "type": "basic",
+                            "from": {
+                                "key_code": "f10",
+                                "modifiers": {
+                                    "mandatory": [
+                                        "control"
+                                    ]
+                                }
+                            },
+                            "to": [
+                                {
+                                    "key_code": "f10"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "description":"control + f11 to f11",
+                    "manipulators": [
+                        {
+                            "type": "basic",
+                            "from": {
+                                "key_code": "f11",
+                                "modifiers": {
+                                    "mandatory": [
+                                        "control"
+                                    ]
+                                }
+                            },
+                            "to": [
+                                {
+                                    "key_code": "f11"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "description":"control + f12 to f12",
+                    "manipulators": [
+                        {
+                            "type": "basic",
+                            "from": {
+                                "key_code": "f12",
+                                "modifiers": {
+                                    "mandatory": [
+                                        "control"
+                                    ]
+                                }
+                            },
+                            "to": [
+                                {
+                                    "key_code": "f12"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "description":"control + home to f11",
+                    "manipulators": [
+                        {
+                            "type": "basic",
+                            "from": {
+                                "key_code": "home",
+                                "modifiers": {
+                                    "mandatory": [
+                                        "control"
+                                    ]
+                                }
+                            },
+                            "to": [
+                                {
+                                    "key_code": "f11"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "description":"control + end to f12",
+                    "manipulators": [
+                        {
+                            "type": "basic",
+                            "from": {
+                                "key_code": "end",
+                                "modifiers": {
+                                    "mandatory": [
+                                        "control"
+                                    ]
+                                }
+                            },
+                            "to": [
+                                {
+                                    "key_code": "f12"
+                                }
+                            ]
+                        }
+                    ]
+                }
+	]
+}
