@@ -9,6 +9,7 @@ Plug 'scrooloose/nerdcommenter'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'easymotion/vim-easymotion'
+Plug 'chrisbra/vim-diff-enhanced'
 
 Plug 'xolox/vim-misc' " needed for vim-session
 Plug 'xolox/vim-session' " store state across vim
@@ -334,20 +335,20 @@ nnoremap th :tabfirst<CR>
 nnoremap tl :tablast<CR>
 
 "  Adding gitignore file to wildignore
-let filename = '.gitignore'
-if filereadable(filename)
-    let igstring = ''
-    for oline in readfile(filename)
-        let line = substitute(oline, '\s|\n|\r', '', "g")
-        if line =~ '^#' | con | endif
-        if line == '' | con  | endif
-        if line =~ '^!' | con  | endif
-        if line =~ '/$' | let igstring .= "," . line . "*" | con | endif
-        let igstring .= "," . line
-    endfor
-    let execstring = "set wildignore+=".substitute(igstring, '^,', '', "g")
-    execute execstring
-endif
+"let filename = '.gitignore'
+"if filereadable(filename)
+"    let igstring = ''
+"    for oline in readfile(filename)
+"        let line = substitute(oline, '\s|\n|\r', '', "g")
+"        if line =~ '^#' | con | endif
+"        if line == '' | con  | endif
+"        if line =~ '^!' | con  | endif
+"        if line =~ '/$' | let igstring .= "," . line . "*" | con | endif
+"        let igstring .= "," . line
+"    endfor
+"    let execstring = "set wildignore+=".substitute(igstring, '^,', '', "g")
+"    execute execstring
+"endif
 
 let g:gitgutter_enabled = 0
 
