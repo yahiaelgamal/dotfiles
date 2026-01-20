@@ -24,3 +24,4 @@ zstyle ':completion:*' list-colors ${(s.:.)LSCOLORS}
 
 ## Add forward slash to wordchars
 WORDCHARS="${WORDCHARS/\//}"
+export PATH=/opt/spotify-devex/bin:$PATH
