@@ -129,7 +129,8 @@ export PYTHON_VERSION='3.8.18'
 # Bash function that takes one or zero arguments.
 new_venv() { pyenv virtualenv ${1:-$PYTHON_VERSION} $(basename "$PWD") && pyenv local $(basename "$PWD") ${1:-$PYTHON_VERSION}; }
 
-myenv(){ pyenv activate $(basename $(pwd)) }
+#myenv(){ pyenv activate $(basename $(pwd)) }
+myenv() { source .venv/bin/activate; }
 
 
 
