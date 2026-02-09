@@ -115,36 +115,14 @@ if [ -f '/Users/yahiae/Downloads/google-cloud-sdk/completion.zsh.inc' ]; then . 
 [ "$HISTSIZE" -lt 50000 ] && HISTSIZE=50000
 [ "$SAVEHIST" -lt 10000 ] && SAVEHIST=10000
 
-## export pyenv to path, relevant when using pyenv-installer
-export PYENV_ROOT="$HOME/.pyenv"
-command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
-
-export PYENV_ROOT="$HOME/.pyenv"
-export PATH="$PYENV_ROOT/bin:$PATH"
-
-# Lazy loader
-#_pyenv_lazy_init() {
-
-#  export PYENV_ROOT="$HOME/.pyenv"
-#  command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
-#  # remove the shims guard so python/pip come from pyenv after init
-#  unfunction _pyenv_lazy_init 2>/dev/null
-#  eval "$(pyenv init -)"
-#  # If you use pyenv-virtualenv:
-#   eval "$(pyenv virtualenv-init -)"
-#  #
-#}
-
-
-
-eval "$(pyenv init -)"
-eval "$(pyenv virtualenv-init -)"
-# Trigger init on first use of pyenv or Python tools
-#alias pyenv='_pyenv_lazy_init; pyenv'
-#for _cmd in python python3 pip pip3; do
-#alias $_cmd="_pyenv_lazy_init; $_cmd"
-#done
-#unset _cmd
+# Pyenv PATH setup is in .zprofile (inlined for speed).
+# Lazy-load pyenv shell integration (defers ~190ms until first `pyenv` use)
+pyenv() {
+  unfunction pyenv
+  eval "$(command pyenv init - --no-rehash zsh)"
+  eval "$(command pyenv virtualenv-init - zsh)" 2>/dev/null
+  pyenv "$@"
+}
 
 ## Default Python version. Change this is if you want another default
 export PYTHON_VERSION='3.8.18'
