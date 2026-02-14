@@ -191,3 +191,4 @@ export ANTHROPIC_VERTEX_PROJECT_ID=spotify-claude-code-trial
 export PATH=/opt/spotify-devex/bin:$PATH
 
 alias claude="/Users/yahiae/.claude/local/claude"
+export PATH="$HOME/.local/bin:$PATH"
