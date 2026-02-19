@@ -1,0 +1,9 @@
+# Example work git config — copy to ~/.gitconfig.local on work machines
+# This overrides values in the shared .gitconfig
+
+[user]
+  email = yahia@spotify.com
+  # signingkey = ...
+
+# [commit]
+#   gpgsign = true

@@ -54,3 +54,9 @@ tags
 .Rds
 .Rdata
 .RData
+
+# Machine-local overrides (not tracked)
+.gitconfig.local
+.dotfiles_env
+.zshrc.local
+.secrets

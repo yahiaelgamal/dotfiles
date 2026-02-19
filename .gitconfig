@@ -3,11 +3,11 @@
   email = yahiaelgamal@gmail.com
 
 [core]
-  editor = $(which vim)
+  editor = vim
   excludesfile = ~/.gitignore_global
-  quotepath = false # to ignore quoting unicode characters
+  quotepath = false
   ignorecase = false
-  autoclrf = input
+  autocrlf = input
 
 [color]
   diff = true
@@ -36,8 +36,12 @@
   dcw = diff --cached --color-words='\\w+|[^[:space:]]'
 
 [credential]
-	helper = osxkeychain
-
+  helper = osxkeychain
 
 [diff]
-    wsErrorHighlight = all
+  wsErrorHighlight = all
+
+# Environment-specific overrides: place a .gitconfig.local on each machine
+# e.g. for work: override [user] email, add signing keys, etc.
+[include]
+  path = ~/.gitconfig.local
