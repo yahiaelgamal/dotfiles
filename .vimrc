@@ -137,6 +137,11 @@ set clipboard=unnamed
 " everyone
 set timeout
 set timeoutlen=400
+set ttimeoutlen=50
+
+" Alt+Backspace deletes a word in insert mode (terminal sends <Esc><BS>)
+inoremap <M-BS> <C-w>
+cnoremap <M-BS> <C-w>
 
 
 " text search settings
@@ -650,3 +655,5 @@ let g:ycm_clangd_binary_path = trim(system('brew --prefix llvm')).'/bin/clangd'
 " we can go back using c-i and c-o
 noremap <leader>jd :YcmCompleter GoTo<CR>
 nmap <silent> <leader>h <plug>(YCMHover)
+
+set rtp+=/opt/homebrew/opt/fzf

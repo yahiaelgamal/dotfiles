@@ -131,6 +131,11 @@ set clipboard=unnamed
 " everyone
 set timeout
 set timeoutlen=400
+set ttimeoutlen=50
+
+" Alt+Backspace deletes a word in insert mode (terminal sends <Esc><BS>)
+inoremap <M-BS> <C-w>
+cnoremap <M-BS> <C-w>
 
 
 " text search settings
