@@ -79,5 +79,11 @@ if [ -x "$HOME/.claude/local/claude" ]; then
   alias claude="$HOME/.claude/local/claude"
 fi
 
+# fzf — fuzzy finder keybindings (Ctrl-T, Ctrl-R, Alt-C) and completion
+if [[ -d /opt/homebrew/opt/fzf ]]; then
+  source /opt/homebrew/opt/fzf/shell/completion.zsh
+  source /opt/homebrew/opt/fzf/shell/key-bindings.zsh
+fi
+
 # Load machine-local overrides if they exist (not tracked in git)
 [[ -f ~/.zshrc.local ]] && source ~/.zshrc.local
