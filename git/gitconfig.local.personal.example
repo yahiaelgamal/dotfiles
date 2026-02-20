@@ -1,0 +1,9 @@
+# Example personal git config — copy to ~/.gitconfig.local on personal machines
+# This overrides values in the shared .gitconfig
+# (The defaults in .gitconfig already use the personal email, so this may be empty)
+
+# [user]
+#   signingkey = ...
+
+# [commit]
+#   gpgsign = true

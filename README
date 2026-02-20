@@ -1,10 +1,74 @@
-for matplotlibrc it should be linked inside .matplotlib
+# Dotfiles
 
+Personal/work dotfiles with multi-environment support. One repo, two contexts — switch between work and personal settings with a single file.
 
-For instance:
-`ln -s ~/dotfiles/matplotlibrc .matplotlib`
+## Quick Start
 
-There is also a .config director. just
-`cd && ln -s ~/dotfiles/.config .config`
+```bash
+git clone https://github.com/yahiaelgamal/dotfiles.git ~/dotfiles
+cd ~/dotfiles
+./install.sh
+```
 
-there is a .config folder that is very important for karabinar
+The installer will:
+1. Ask whether this is a **work** or **personal** machine
+2. Symlink all config files to `$HOME`
+3. Set up a machine-local git config (`~/.gitconfig.local`) from the matching example
+4. Back up any existing files before replacing them
+
+## Multi-Environment System
+
+A `~/.dotfiles_env` file controls which environment is active:
+
+```bash
+echo "work" > ~/.dotfiles_env      # work machine
+echo "personal" > ~/.dotfiles_env  # personal machine
+```
+
+Open a new shell to pick up the change.
+
+### How it works
+
+```
+.zshrc
+  ├── oh-my-zsh setup
+  ├── shell/common.zsh         # shared: editor, history, pyenv, gcloud, SDKMan
+  ├── shell/env_work.zsh       # work-only: Vertex AI, Spotify tooling
+  ├── shell/env_personal.zsh   # personal-only settings
+  └── ~/.zshrc.local           # machine-specific overrides (not tracked)
+```
+
+Git uses a similar pattern:
+- `.gitconfig` — shared aliases, settings, defaults to personal email
+- `~/.gitconfig.local` — machine-specific overrides (email, signing keys). Created by `install.sh` from the examples in `git/`.
+
+### Adding environment-specific config
+
+- **Shell:** Add exports/aliases/functions to `shell/env_work.zsh` or `shell/env_personal.zsh`
+- **Git:** Edit `~/.gitconfig.local` on the specific machine, or update the examples in `git/`
+- **Machine-local overrides:** Put anything in `~/.zshrc.local` (not tracked by git)
+
+## What's Included
+
+| Tool | Config File(s) |
+|------|---------------|
+| Zsh (oh-my-zsh) | `.zshrc`, `.zprofile`, `shell/` |
+| Bash | `.bash_profile` |
+| Git | `.gitconfig`, `.gitignore_global`, `git/` |
+| Vim | `.vimrc`, `.gvimrc` |
+| Neovim | `config_dir/nvim/init.vim` |
+| Tmux | `.tmux.conf` |
+| Python/Pyenv | `.pythonrc`, lazy-loaded pyenv in shell |
+| R/RStudio | `.Rprofile`, `common.R`, `.config/rstudio/` |
+| CTags | `.ctags` |
+| Matplotlib | `matplotlibrc` (linked into `~/.matplotlib/`) |
+| Karabiner | `.config/karabiner/` (macOS only) |
+| Amethyst | `.amethyst` (macOS only) |
+
+## Manual Steps
+
+Some configs can't be symlinked automatically:
+
+- **Karabiner** is handled by `install.sh` on macOS, but may need app permissions configured manually
+- **BetterTouchTool** (`btt_conf.json`) — import via the app's UI
+- **BetterSnapTool** (`com.hegenberg.BetterSnapTool.plist`) — import via the app's UI

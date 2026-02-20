@@ -1,1 +1,1 @@
-/Users/yahiaelgamal/dotfiles/.vimrc
+/Users/yahiaelgamal/dotfiles/config_dir/nvim/init.vim
