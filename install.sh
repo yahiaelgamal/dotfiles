@@ -77,12 +77,6 @@ fi
 link_file "$DOTFILES_DIR/.vimrc"  "$HOME/.vimrc"
 link_file "$DOTFILES_DIR/.gvimrc" "$HOME/.gvimrc"
 
-# Neovim
-mkdir -p "$HOME/.config/nvim"
-if [ -f "$DOTFILES_DIR/config_dir/nvim/init.vim" ]; then
-  link_file "$DOTFILES_DIR/config_dir/nvim/init.vim" "$HOME/.config/nvim/init.vim"
-fi
-
 # Tmux
 link_file "$DOTFILES_DIR/.tmux.conf" "$HOME/.tmux.conf"
 
@@ -103,10 +97,22 @@ if [ -f "$DOTFILES_DIR/matplotlibrc" ]; then
   link_file "$DOTFILES_DIR/matplotlibrc" "$HOME/.matplotlib/matplotlibrc"
 fi
 
-# Karabiner (macOS only)
-if [[ "$(uname)" == "Darwin" ]] && [ -d "$DOTFILES_DIR/.config/karabiner" ]; then
-  mkdir -p "$HOME/.config"
-  link_file "$DOTFILES_DIR/.config/karabiner" "$HOME/.config/karabiner"
+# --- ~/.config symlinks ---
+mkdir -p "$HOME/.config"
+
+for config_dir in gh git htop nvim raycast rstudio sourcery; do
+  if [ -d "$DOTFILES_DIR/.config/$config_dir" ]; then
+    link_file "$DOTFILES_DIR/.config/$config_dir" "$HOME/.config/$config_dir"
+  fi
+done
+
+# macOS-only .config directories
+if [[ "$(uname)" == "Darwin" ]]; then
+  for config_dir in iterm2 karabiner; do
+    if [ -d "$DOTFILES_DIR/.config/$config_dir" ]; then
+      link_file "$DOTFILES_DIR/.config/$config_dir" "$HOME/.config/$config_dir"
+    fi
+  done
 fi
 
 # Amethyst (macOS only)
