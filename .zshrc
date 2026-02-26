@@ -46,3 +46,4 @@ fi
 
 # ---------- Completion colors ----------
 zstyle ':completion:*' list-colors ${(s.:.)LSCOLORS}
+export PATH=/opt/spotify-devex/bin:$PATH
