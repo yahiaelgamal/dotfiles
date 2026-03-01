@@ -3,7 +3,13 @@
     "allow": [
       "Bash(uv venv:*)",
       "Bash(uv python pin:*)",
-      "Bash(uv pip install:*)"
+      "Bash(uv pip install:*)",
+      "Bash(cd:*)",
+      "Bash(ls:*)",
+      "Bash(npm:*)",
+      "Bash(mkdir:*)",
+      "WebFetch",
+      "WebSearch"
     ]
   }
 }

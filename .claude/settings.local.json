@@ -1,0 +1,14 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(zsh:*)",
+      "Bash(# Check if pyenv virtualenv-init exists pyenv commands)",
+      "Bash(done)",
+      "Bash(ln:*)",
+      "Bash(git add:*)",
+      "Bash(git commit:*)",
+      "Bash(bash:*)",
+      "Bash(git push:*)"
+    ]
+  }
+}
