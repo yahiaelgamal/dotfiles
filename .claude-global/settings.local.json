@@ -8,6 +8,7 @@
       "Bash(ls:*)",
       "Bash(npm:*)",
       "Bash(mkdir:*)",
+      "Bash(curl:*)",
       "WebFetch",
       "WebSearch"
     ]
