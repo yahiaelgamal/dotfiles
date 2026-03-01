@@ -120,6 +120,14 @@ if [[ "$(uname)" == "Darwin" ]] && [ -f "$DOTFILES_DIR/.amethyst" ]; then
   link_file "$DOTFILES_DIR/.amethyst" "$HOME/.amethyst"
 fi
 
+# --- Claude Code ---
+mkdir -p "$HOME/.claude"
+link_file "$DOTFILES_DIR/.claude-global/CLAUDE.md"           "$HOME/.claude/CLAUDE.md"
+link_file "$DOTFILES_DIR/.claude-global/settings.json"       "$HOME/.claude/settings.json"
+link_file "$DOTFILES_DIR/.claude-global/settings.local.json" "$HOME/.claude/settings.local.json"
+link_file "$DOTFILES_DIR/.claude-global/commands"            "$HOME/.claude/commands"
+link_file "$DOTFILES_DIR/.claude-global/skills"              "$HOME/.claude/skills"
+
 echo ""
 echo "--- Done! ---"
 echo "Environment: $(cat "$HOME/.dotfiles_env")"
