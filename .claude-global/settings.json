@@ -1,1 +1,60 @@
-{}
+{
+  "permissions": {
+    "allow": [
+      "Bash(cd *)",
+      "Bash(ls *)",
+      "Bash(pwd)",
+      "Bash(cat *)",
+      "Bash(find *)",
+      "Bash(which *)",
+      "Bash(where *)",
+      "Bash(echo *)",
+      "Write(/tmp/*)",
+      "Edit(/tmp/*)",
+      "Read(/tmp/*)",
+      "Bash(git status)",
+      "Bash(git diff *)",
+      "Bash(git log *)",
+      "Bash(git branch)",
+      "Bash(npm test *)",
+      "Bash(yarn test *)",
+      "Bash(pytest *)",
+      "Bash(npm run *)",
+      "Bash(yarn *)",
+      "Bash(python *)",
+      "Bash(node *)",
+      "Bash(make *)",
+      "Bash(grep *)",
+      "Bash(rg *)",
+      "Bash(wc *)",
+      "Bash(head *)",
+      "Bash(tail *)",
+      "Bash(env)",
+      "Bash(printenv *)",
+      "Bash(man *)",
+      "Bash(uv *)",
+      "Bash(npm install *)",
+      "Bash(brew *)",
+      "Bash(watch *)",
+      "WebSearch",
+      "WebFetch",
+      "Search"
+    ]
+  },
+  "enabledPlugins": {
+    "ralph-loop@claude-plugins-official": true,
+    "playwright@claude-plugins-official": true,
+    "frontend-design@claude-plugins-official": true,
+    "feature-dev@claude-plugins-official": true,
+    "skill-creator@claude-plugins-official": true,
+    "github@claude-plugins-official": true
+  },
+  "extraKnownMarketplaces": {
+    "claude-plugins-official": {
+      "source": {
+        "source": "git",
+        "url": "git@github.com:anthropics/claude-plugins-official.git"
+      }
+    }
+  }
+}
