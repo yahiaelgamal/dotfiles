@@ -1,1 +1,0 @@
-/Users/yahiaelgamal/dotfiles/config_dir/nvim/init.vim
