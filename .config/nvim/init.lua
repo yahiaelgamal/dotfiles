@@ -330,8 +330,13 @@ require("lazy").setup({
       vim.cmd("colorscheme hybrid")
     end,
   },
+
+  --  add gitsigns
+  { "lewis6991/gitsigns.nvim", config = true }
 })
 
+
+-- mapping
 -- pressing p in quickfix window will view the position
   vim.api.nvim_create_autocmd('FileType', {
     pattern = 'qf',
@@ -339,3 +344,4 @@ require("lazy").setup({
       vim.keymap.set('n', 'p', '<CR><C-w>p', { buffer = true, silent = true })
     end,
   })
+
