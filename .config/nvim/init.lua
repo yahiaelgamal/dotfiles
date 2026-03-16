@@ -216,6 +216,7 @@ require("lazy").setup({
     dependencies = { "nvim-tree/nvim-web-devicons" },
     keys = { { "<leader>d", ":NvimTreeToggle<CR>", desc = "Toggle file tree" } },
     opts = {
+      sync_root_with_cwd = true,
       on_attach = function(bufnr)
         local api = require('nvim-tree.api')
         api.config.mappings.default_on_attach(bufnr)  -- keep all defaults
