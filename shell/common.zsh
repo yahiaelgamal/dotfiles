@@ -89,3 +89,5 @@ fi
 
 # Load machine-local overrides if they exist (not tracked in git)
 [[ -f ~/.zshrc.local ]] && source ~/.zshrc.local
+
+alias vim=nvim

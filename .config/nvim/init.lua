@@ -345,6 +345,49 @@ require("lazy").setup({
     end,
   },
 
+  -- will require brew install jdtl for java stuff
+  {
+    "mfussenegger/nvim-jdtls",
+    ft = "java",
+    config = function()
+      local root = vim.fs.dirname(vim.fs.find({ "pom.xml", ".git" }, { upward = true })[1])
+
+      -- Read .sdkmanrc from project root to get the Java version
+      local java_home = nil
+      local sdkmanrc = root and (root .. "/.sdkmanrc")
+      if sdkmanrc and vim.fn.filereadable(sdkmanrc) == 1 then
+        for line in io.lines(sdkmanrc) do
+          local version = line:match("^java=(.+)")
+          if version then
+            local candidate = vim.fn.expand("~/.sdkman/candidates/java/" .. version)
+            if vim.fn.isdirectory(candidate) == 1 then
+              java_home = candidate
+            end
+            break
+          end
+        end
+      end
+
+      local cmd = { "jdtls" }
+      if java_home then
+        table.insert(cmd, "--java-executable")
+        table.insert(cmd, java_home .. "/bin/java")
+      end
+
+      local config = {
+        cmd = cmd,
+        root_dir = root,
+      }
+
+      vim.api.nvim_create_autocmd("FileType", {
+        pattern = "java",
+        callback = function()
+          require("jdtls").start_or_attach(config)
+        end,
+      })
+    end,
+  },
+
   --  add gitsigns
   { "lewis6991/gitsigns.nvim", config = true }
 })
