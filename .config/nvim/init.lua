@@ -395,10 +395,12 @@ require("lazy").setup({
 
 -- mapping
 -- pressing p in quickfix window will view the position
-  vim.api.nvim_create_autocmd('FileType', {
+vim.api.nvim_create_autocmd('FileType', {
     pattern = 'qf',
     callback = function()
       vim.keymap.set('n', 'p', '<CR><C-w>p', { buffer = true, silent = true })
     end,
-  })
+})
 
+-- \e to view current file in tree
+vim.keymap.set('n', '<leader>e', ':NvimTreeFindFile<CR>')
