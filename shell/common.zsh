@@ -3,6 +3,8 @@
 # Language
 export LANG=en_US.UTF-8
 
+alias vim='nvim'
+
 # Editor — use vim everywhere; mvim only if available and not over SSH
 if [[ -n $SSH_CONNECTION ]]; then
   export EDITOR='vim'

@@ -215,7 +215,20 @@ require("lazy").setup({
     "nvim-tree/nvim-tree.lua",
     dependencies = { "nvim-tree/nvim-web-devicons" },
     keys = { { "<leader>d", ":NvimTreeToggle<CR>", desc = "Toggle file tree" } },
-    opts = {},
+    opts = {
+      on_attach = function(bufnr)
+        local api = require('nvim-tree.api')
+        api.config.mappings.default_on_attach(bufnr)  -- keep all defaults
+
+        vim.keymap.set('n', 'x', function()
+          local node = api.tree.get_node_under_cursor()
+          if node then
+            vim.fn.system('open ' .. vim.fn.shellescape(node.absolute_path))
+          end
+        end, { buffer = bufnr, desc = 'Open with system default' })
+      end,
+    },
+
   },
 
   -- Commenting (replaces NERDCommenter)
