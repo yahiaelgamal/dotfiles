@@ -259,6 +259,7 @@ require("lazy").setup({
     dependencies = { "nvim-lua/plenary.nvim" },
     keys = {
       { "<C-p>", function() require("telescope.builtin").find_files() end, desc = "Find files" },
+      -- requires brew install ripgrip
       { "<leader>g", function() require("telescope.builtin").live_grep() end, desc = "Live grep" },
       { "<leader>B", function() require("telescope.builtin").buffers() end, desc = "Buffers" },
     },
@@ -283,6 +284,11 @@ require("lazy").setup({
     event = "VeryLazy",
     keys = {
       { "s", function() require("flash").jump() end, mode = { "n", "x", "o" }, desc = "Flash" },
+      { "S", function() require("flash").treesitter() end, mode = { "n", "x", "o" }, desc = "Flash Treesitter" },
+      { "f", function() require("flash").jump({mode = "char"}) end, mode = { "n", "x", "o" } },
+      { "F", function() require("flash").jump({mode = "char"}) end, mode = { "n", "x", "o" } },
+      { "t", function() require("flash").jump({mode = "char"}) end, mode = { "n", "x", "o" } },
+      { "T", function() require("flash").jump({mode = "char"}) end, mode = { "n", "x", "o" } },
     },
   },
 
@@ -345,6 +351,14 @@ require("lazy").setup({
     end,
   },
 
+  {
+    "folke/tokyonight.nvim",
+    priority = 1000,
+    config = function()
+      vim.cmd("colorscheme tokyonight")
+    end,
+  },
+
   -- will require brew install jdtl for java stuff
   {
     "mfussenegger/nvim-jdtls",
@@ -389,7 +403,13 @@ require("lazy").setup({
   },
 
   --  add gitsigns
-  { "lewis6991/gitsigns.nvim", config = true }
+  { "lewis6991/gitsigns.nvim", config = true },
+
+  -- folding
+  { "kevinhwang91/nvim-ufo", 
+    dependencies = { "kevinhwang91/promise-async" }, 
+    opts = {} 
+  }
 })
 
 
