@@ -348,9 +348,9 @@ require("lazy").setup({
   {
     "w0ng/vim-hybrid",
     priority = 1000,
-    config = function()
-      vim.cmd("colorscheme hybrid")
-    end,
+    -- config = function()
+    --   vim.cmd("colorscheme hybrid")
+    -- end,
   },
 
   {
