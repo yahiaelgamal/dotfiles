@@ -424,5 +424,12 @@ vim.api.nvim_create_autocmd('FileType', {
     end,
 })
 
--- \e to view current file in tree
-vim.keymap.set('n', '<leader>e', ':NvimTreeFindFile<CR>')
+-- \f to view current file in tree
+vim.keymap.set('n', '<leader>f', ':NvimTreeFindFile<CR>')
+
+
+-- \e to hover on problems
+vim.keymap.set("n", "<leader>e", vim.diagnostic.open_float)
+vim.keymap.set("n", "]d", vim.diagnostic.goto_next)
+vim.keymap.set("n", "[d", vim.diagnostic.goto_prev)
+vim.keymap.set("n", "<leader>q", vim.diagnostic.setloclist)
