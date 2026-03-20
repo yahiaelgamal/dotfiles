@@ -278,7 +278,7 @@ require("lazy").setup({
   },
 
   -- Indent guides (replaces indentLine)
-  { "lukas-reineke/indent-blankline.nvim", main = "ibl", opts = {} },
+  { "lukas-reineke/indent-blankline.nvim", main = "ibl", event = { "BufReadPre", "BufNewFile" }, opts = {} },
 
   -- Motion (replaces easymotion)
   {
@@ -311,6 +311,7 @@ require("lazy").setup({
   -- },
   {
     "neovim/nvim-lspconfig",
+    event = { "BufReadPre", "BufNewFile" },
     config = function()
       vim.lsp.config('pyright', {})
       vim.lsp.enable('pyright')
@@ -341,18 +342,11 @@ require("lazy").setup({
   -- Treesitter (better syntax highlighting)
   {
     "nvim-treesitter/nvim-treesitter",
+    event = { "BufReadPre", "BufNewFile" },
     build = ":TSUpdate",
   },
 
   -- Colorscheme
-  {
-    "w0ng/vim-hybrid",
-    priority = 1000,
-    -- config = function()
-    --   vim.cmd("colorscheme hybrid")
-    -- end,
-  },
-
   {
     "folke/tokyonight.nvim",
     priority = 1000,
@@ -405,13 +399,16 @@ require("lazy").setup({
   },
 
   --  add gitsigns
-  { "lewis6991/gitsigns.nvim", config = true },
+  { "lewis6991/gitsigns.nvim", event = { "BufReadPre", "BufNewFile" }, config = true },
 
   -- folding
-  { "kevinhwang91/nvim-ufo", 
-    dependencies = { "kevinhwang91/promise-async" }, 
-    opts = {} 
+  { "kevinhwang91/nvim-ufo",
+    event = { "BufReadPre", "BufNewFile" },
+    dependencies = { "kevinhwang91/promise-async" },
+    opts = {}
   }
+}, {
+  rocks = { enabled = false },
 })
 
 
