@@ -1,39 +1,50 @@
-# Path to your oh-my-zsh installation.
-export ZSH="$HOME/.oh-my-zsh"
+# ---------- Completion ----------
+autoload -Uz compinit
+compinit -C  # skip compaudit; regenerate dump manually if completions break
 
-# Theme
-ZSH_THEME="robbyrussell"
+# ---------- Colors ----------
+autoload -Uz colors && colors
 
-# Case-sensitive completion (note: HYPHEN_INSENSITIVE requires this OFF)
+# ---------- Prompt (robbyrussell-style) ----------
+autoload -Uz vcs_info
+zstyle ':vcs_info:git:*' formats "%{$fg_bold[blue]%}git:(%{$fg[red]%}%b%{$fg[blue]%})%{$reset_color%}"
+zstyle ':vcs_info:git:*' actionformats "%{$fg_bold[blue]%}git:(%{$fg[red]%}%b%{$fg[blue]%}) %{$fg[yellow]%}%a%{$reset_color%}"
+precmd() { vcs_info }
+setopt PROMPT_SUBST
+PROMPT='%(?:%{$fg_bold[green]%}➜ :%{$fg_bold[red]%}➜ )%{$fg[cyan]%}%c%{$reset_color%} ${vcs_info_msg_0_} '
+
+# ---------- History ----------
+[ -z "$HISTFILE" ] && HISTFILE="$HOME/.zsh_history"
+HISTSIZE=50000
+SAVEHIST=10000
+setopt HIST_IGNORE_ALL_DUPS HIST_FIND_NO_DUPS SHARE_HISTORY INC_APPEND_HISTORY
+
+# ---------- Options ----------
+setopt AUTO_CD
+setopt CORRECT
 CASE_SENSITIVE="true"
 
-# Auto-update behavior
-zstyle ':omz:update' mode auto
-zstyle ':omz:update' frequency 13
+# ---------- Keybindings ----------
+bindkey -e
+bindkey '^[[A' history-search-backward
+bindkey '^[[B' history-search-forward
 
-# Show dots while waiting for completion
+# ---------- Completion style ----------
+zstyle ':completion:*' menu select
+zstyle ':completion:*' list-colors ${(s.:.)LSCOLORS}
 COMPLETION_WAITING_DOTS="true"
 
-# Don't mark untracked files as dirty (faster for large repos)
-DISABLE_UNTRACKED_FILES_DIRTY="true"
-
-# History timestamp format
-HIST_STAMPS="mm/dd/yyyy"
-
-# Plugins (keep lean for fast startup)
-plugins=(git history)
-
-source $ZSH/oh-my-zsh.sh
+# ---------- History aliases ----------
+alias h='history'
+alias hl='history | less'
+alias hs='history | grep'
+alias hsi='history | grep -i'
 
 # ---------- Environment detection ----------
-# Set your environment in ~/.dotfiles_env (contains "work" or "personal")
-# If unset, defaults to "personal"
 export DOTFILES_ENV="${DOTFILES_ENV:-personal}"
 [[ -f ~/.dotfiles_env ]] && export DOTFILES_ENV="$(< ~/.dotfiles_env)"
 
-# Resolve dotfiles location
 DOTFILES_DIR="${0:A:h}"
-# Fallback if sourced in a way that $0 doesn't resolve
 [[ -d "$DOTFILES_DIR/shell" ]] || DOTFILES_DIR="$HOME/dotfiles"
 
 # ---------- Load shared config ----------
@@ -44,6 +55,5 @@ if [[ -f "$DOTFILES_DIR/shell/env_${DOTFILES_ENV}.zsh" ]]; then
   source "$DOTFILES_DIR/shell/env_${DOTFILES_ENV}.zsh"
 fi
 
-# ---------- Completion colors ----------
-zstyle ':completion:*' list-colors ${(s.:.)LSCOLORS}
+export PATH="$HOME/.local/bin:$PATH"
 export PATH=/opt/spotify-devex/bin:$PATH

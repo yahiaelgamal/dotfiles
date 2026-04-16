@@ -62,9 +62,13 @@ fi
 # pipx / local bins
 export PATH="$HOME/.local/bin:$PATH"
 
-# SDKMan
+# SDKMan -- lazy-load to avoid ~220ms startup penalty
 export SDKMAN_DIR="$HOME/.sdkman"
-[[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
+sdk() {
+  unfunction sdk
+  [[ -s "$SDKMAN_DIR/bin/sdkman-init.sh" ]] && source "$SDKMAN_DIR/bin/sdkman-init.sh"
+  sdk "$@"
+}
 
 # Java
 if [ -d "/usr/local/opt/openjdk@17/bin" ]; then
