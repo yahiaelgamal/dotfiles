@@ -1,6 +1,6 @@
 [user]
-  name = yahiaelgamal
-  email = yahiaelgamal@gmail.com
+	name = Yahia Elgamal
+	email = yahiae@spotify.com
 
 [core]
   editor = vim
@@ -14,7 +14,7 @@
   branch = true
 
 [push]
-  default = current
+	default = simple
 
 [difftool "git_diff_wrapper"]
   cmd = git_diff_wrapper $LOCAL $REMOTE

@@ -97,23 +97,8 @@ if [ -f "$DOTFILES_DIR/matplotlibrc" ]; then
   link_file "$DOTFILES_DIR/matplotlibrc" "$HOME/.matplotlib/matplotlibrc"
 fi
 
-# --- ~/.config symlinks ---
-mkdir -p "$HOME/.config"
-
-for config_dir in gh git htop nvim raycast rstudio sourcery; do
-  if [ -d "$DOTFILES_DIR/.config/$config_dir" ]; then
-    link_file "$DOTFILES_DIR/.config/$config_dir" "$HOME/.config/$config_dir"
-  fi
-done
-
-# macOS-only .config directories
-if [[ "$(uname)" == "Darwin" ]]; then
-  for config_dir in iterm2 karabiner; do
-    if [ -d "$DOTFILES_DIR/.config/$config_dir" ]; then
-      link_file "$DOTFILES_DIR/.config/$config_dir" "$HOME/.config/$config_dir"
-    fi
-  done
-fi
+# --- ~/.config symlink ---
+link_file "$DOTFILES_DIR/.config" "$HOME/.config"
 
 # Amethyst (macOS only)
 if [[ "$(uname)" == "Darwin" ]] && [ -f "$DOTFILES_DIR/.amethyst" ]; then

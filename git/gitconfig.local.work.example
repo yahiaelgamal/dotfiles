@@ -2,8 +2,16 @@
 # This overrides values in the shared .gitconfig
 
 [user]
-  email = yahia@spotify.com
-  # signingkey = ...
+	name = Yahia Elgamal
+	email = yahiae@spotify.com
 
 # [commit]
 #   gpgsign = true
+#
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
+[maintenance]
+	repo = /Users/yahiae/src/services-pilot

@@ -1,4 +1,7 @@
 {
+  "env": {
+    "PLAYWRIGHT_CHROME_EXECUTABLE_PATH": "/Applications/Arc.app/Contents/MacOS/Arc"
+  },
   "permissions": {
     "allow": [
       "Bash(cd *)",
@@ -9,6 +12,9 @@
       "Bash(which *)",
       "Bash(where *)",
       "Bash(echo *)",
+      "Bash(gws *)",
+      "Bash(gws * | python *)",
+      "Bash(gws * | python3 *)",
       "Write(/tmp/*)",
       "Edit(/tmp/*)",
       "Read(/tmp/*)",
@@ -41,43 +47,11 @@
       "Search"
     ]
   },
-  "model": "sonnet",
-  "hooks": {
-    "SessionStart": [
-      {
-        "hooks": [
-          {
-            "type": "command",
-            "command": "node \"/Users/yahiaelgamal/.claude/hooks/gsd-check-update.js\""
-          }
-        ]
-      }
-    ],
-    "PostToolUse": [
-      {
-        "hooks": [
-          {
-            "type": "command",
-            "command": "node \"/Users/yahiaelgamal/.claude/hooks/gsd-context-monitor.js\""
-          }
-        ]
-      }
-    ]
-  },
-  "statusLine": {
-    "type": "command",
-    "command": "node \"/Users/yahiaelgamal/.claude/hooks/gsd-statusline.js\""
-  },
+  "model": "sonnet[1m]",
   "enabledPlugins": {
-    "ralph-loop@claude-plugins-official": true,
-    "playwright@claude-plugins-official": true,
-    "frontend-design@claude-plugins-official": true,
-    "feature-dev@claude-plugins-official": true,
     "skill-creator@claude-plugins-official": true,
-    "github@claude-plugins-official": true,
-    "plugin-dev@claude-plugins-official": true,
-    "superpowers@claude-plugins-official": true,
-    "pyright-lsp@claude-plugins-official": true
+    "superpowers@claude-plugins-official": false,
+    "pyright-lsp@claude-plugins-official": false
   },
   "extraKnownMarketplaces": {
     "claude-plugins-official": {
@@ -87,5 +61,6 @@
       }
     }
   },
-  "effortLevel": "high"
+  "effortLevel": "low",
+  "skipDangerousModePermissionPrompt": true
 }

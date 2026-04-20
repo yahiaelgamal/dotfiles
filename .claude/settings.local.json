@@ -8,7 +8,19 @@
       "Bash(git add:*)",
       "Bash(git commit:*)",
       "Bash(bash:*)",
-      "Bash(git push:*)"
+      "Bash(git push:*)",
+      "Bash(rm /Users/yahiae/dotfiles/.config/nvim)",
+      "Bash(mv /Users/yahiae/dotfiles/.config/nvim.bak/nvim /Users/yahiae/dotfiles/.config/nvim)",
+      "Bash(nvim --startuptime /tmp/nvim-startup.log +q)",
+      "Read(//tmp/**)",
+      "Bash(nvim --headless --startuptime /tmp/nvim-startup3.log +q)",
+      "Bash(nvim --headless --startuptime /tmp/nvim-startup-file.log /Users/yahiae/dotfiles/.config/nvim/init.lua +q)",
+      "Read(//Users/yahiae/.local/share/nvim/shada/**)",
+      "Read(//Users/yahiae/.local/state/nvim/shada/**)",
+      "Read(//Users/yahiae/.local/share/nvim/site/**)",
+      "Read(//Users/yahiae/.config/nvim/**)",
+      "Bash(time script:*)",
+      "Bash(git status:*)"
     ]
   }
 }

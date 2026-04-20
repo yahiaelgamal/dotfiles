@@ -12,7 +12,9 @@
       "WebFetch",
       "WebSearch",
       "Bash(nvim:*)",
-      "Bash(vim:*)"
+      "Bash(vim:*)",
+      "Bash(gws:*)",
+      "Bash(jira:*)"
     ]
   }
 }

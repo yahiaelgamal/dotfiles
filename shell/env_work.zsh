@@ -3,3 +3,4 @@
 
 # Work tooling
 export PATH="/opt/spotify-devex/bin:$PATH"
+source /Users/yahiae/agentic-work/.env.local
