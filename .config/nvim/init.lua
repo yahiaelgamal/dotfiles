@@ -287,10 +287,10 @@ require("lazy").setup({
     keys = {
       { "s", function() require("flash").jump() end, mode = { "n", "x", "o" }, desc = "Flash" },
       { "S", function() require("flash").treesitter() end, mode = { "n", "x", "o" }, desc = "Flash Treesitter" },
-      { "f", function() require("flash").jump({mode = "char"}) end, mode = { "n", "x", "o" } },
-      { "F", function() require("flash").jump({mode = "char"}) end, mode = { "n", "x", "o" } },
-      { "t", function() require("flash").jump({mode = "char"}) end, mode = { "n", "x", "o" } },
-      { "T", function() require("flash").jump({mode = "char"}) end, mode = { "n", "x", "o" } },
+      { "gw", function() require("flash").jump({ search = { mode = "search", max_length = 0, forward = true  }, label = { after = { 0, 0 } }, pattern = "\\<" }) end, mode = { "n", "x", "o" }, desc = "Flash words forward" },
+      { "gW", function() require("flash").jump({ search = { mode = "search", max_length = 0, forward = false }, label = { after = { 0, 0 } }, pattern = "\\<" }) end, mode = { "n", "x", "o" }, desc = "Flash words backward" },
+      { "gl", function() require("flash").jump({ search = { mode = "search", max_length = 0, forward = true  }, label = { after = { 0, 0 } }, pattern = "^" }) end, mode = { "n", "x", "o" }, desc = "Flash lines forward" },
+      { "gL", function() require("flash").jump({ search = { mode = "search", max_length = 0, forward = false }, label = { after = { 0, 0 } }, pattern = "^" }) end, mode = { "n", "x", "o" }, desc = "Flash lines backward" },
     },
   },
 
