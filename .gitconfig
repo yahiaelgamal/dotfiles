@@ -45,3 +45,12 @@
 # e.g. for work: override [user] email, add signing keys, etc.
 [include]
   path = ~/.gitconfig.local
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
+[lfs]
+	locksverify = false
+[maintenance]
+	repo = /Users/yahiae/src/services-pilot
