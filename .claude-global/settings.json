@@ -45,7 +45,8 @@
       "WebSearch",
       "WebFetch",
       "Search"
-    ]
+    ],
+    "defaultMode": "auto"
   },
   "model": "sonnet[1m]",
   "enabledPlugins": {
@@ -62,5 +63,6 @@
     }
   },
   "effortLevel": "low",
-  "skipDangerousModePermissionPrompt": true
+  "skipDangerousModePermissionPrompt": true,
+  "skipAutoPermissionPrompt": true
 }
