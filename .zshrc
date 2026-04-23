@@ -5,6 +5,20 @@ compinit -C  # skip compaudit; regenerate dump manually if completions break
 # ---------- Colors ----------
 autoload -Uz colors && colors
 
+# GNU ls colors: dirs=bold blue, executables=bold green, symlinks=bold cyan,
+# archives=bold red, images/media=magenta
+if command -v gdircolors &>/dev/null; then
+  eval "$(gdircolors -b)"
+  alias ls='gls --color=auto --group-directories-first'
+  alias ll='gls -lh --color=auto --group-directories-first'
+  alias la='gls -lAh --color=auto --group-directories-first'
+  alias l='gls -CF --color=auto --group-directories-first'
+else
+  alias ls='ls --color=auto'
+  alias ll='ls -lh --color=auto'
+  alias la='ls -lAh --color=auto'
+fi
+
 # ---------- Prompt (robbyrussell-style) ----------
 autoload -Uz vcs_info
 zstyle ':vcs_info:git:*' formats "%{$fg_bold[blue]%}git:(%{$fg[red]%}%b%{$fg[blue]%})%{$reset_color%}"
@@ -31,7 +45,7 @@ bindkey '^[[B' history-search-forward
 
 # ---------- Completion style ----------
 zstyle ':completion:*' menu select
-zstyle ':completion:*' list-colors ${(s.:.)LSCOLORS}
+zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
 COMPLETION_WAITING_DOTS="true"
 
 # ---------- History aliases ----------
