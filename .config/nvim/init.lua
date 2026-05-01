@@ -370,7 +370,12 @@ require("lazy").setup({
     "mfussenegger/nvim-jdtls",
     ft = "java",
     config = function()
-      local root = vim.fs.dirname(vim.fs.find({ "pom.xml", ".git" }, { upward = true })[1])
+      -- Prefer .project (Eclipse) so per-component setups like
+      -- `spt ide:setup-component` anchor jdtls at the component, not at the
+      -- monorepo root. Falling back to pom.xml / .git there causes jdtls to
+      -- crawl Bazel's external/ output base and try to import every
+      -- build.gradle/pom.xml it finds (grpc-java cronet, protobuf-jruby, ...).
+      local root = vim.fs.dirname(vim.fs.find({ ".project", "pom.xml", ".git" }, { upward = true })[1])
 
       -- Read .sdkmanrc from project root to get the Java version
       local java_home = nil
@@ -397,6 +402,27 @@ require("lazy").setup({
       local config = {
         cmd = cmd,
         root_dir = root,
+        settings = {
+          java = {
+            import = {
+              exclusions = {
+                "**/node_modules/**",
+                "**/.metadata/**",
+                "**/archetype-resources/**",
+                "**/META-INF/maven/**",
+                "**/bazel-*/**",
+                "**/external/**",
+                "**/bazel-out/**",
+                "**/bazel-bin/**",
+                "**/bazel-testlogs/**",
+              },
+              gradle = { enabled = false },
+              maven = { enabled = false },
+            },
+            autobuild = { enabled = false },
+            configuration = { updateBuildConfiguration = "disabled" },
+          },
+        },
       }
 
       vim.api.nvim_create_autocmd("FileType", {
