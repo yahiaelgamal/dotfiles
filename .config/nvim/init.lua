@@ -127,8 +127,8 @@ map("i", "<CR>", function()
 end, { expr = true })
 
 -- Leader mappings
-map("n", "<leader>s", ":set lines=120 columns=100<CR>")
-map("n", "<leader>b", ":set lines=2000 columns=2000<CR>")
+-- map("n", "<leader>s", ":set lines=120 columns=100<CR>")
+-- map("n", "<leader>b", ":set lines=2000 columns=2000<CR>")
 map("n", "<leader>j", ":%!python3 -m json.tool<CR>")
 map("n", "<leader>l", ":set list!<CR>")
 
@@ -264,6 +264,16 @@ require("lazy").setup({
       -- requires brew install ripgrip
       { "<leader>g", function() require("telescope.builtin").live_grep() end, desc = "Live grep" },
       { "<leader>B", function() require("telescope.builtin").buffers() end, desc = "Buffers" },
+    },
+    opts = {
+      defaults = {
+        mappings = {
+          i = {
+            ["<C-j>"] = "move_selection_next",
+            ["<C-k>"] = "move_selection_previous",
+          },
+        },
+      },
     },
   },
 

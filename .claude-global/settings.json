@@ -48,11 +48,12 @@
     ],
     "defaultMode": "auto"
   },
-  "model": "sonnet[1m]",
+  "model": "opus[1m]",
   "enabledPlugins": {
     "skill-creator@claude-plugins-official": true,
     "superpowers@claude-plugins-official": false,
-    "pyright-lsp@claude-plugins-official": false
+    "pyright-lsp@claude-plugins-official": false,
+    "figma@claude-plugins-official": true
   },
   "extraKnownMarketplaces": {
     "claude-plugins-official": {
@@ -62,7 +63,7 @@
       }
     }
   },
-  "effortLevel": "low",
+  "effortLevel": "medium",
   "skipDangerousModePermissionPrompt": true,
   "skipAutoPermissionPrompt": true
 }
