@@ -48,12 +48,15 @@
     ],
     "defaultMode": "auto"
   },
-  "model": "opus[1m]",
+  "model": "claude-opus-4-6[1m]",
   "enabledPlugins": {
     "skill-creator@claude-plugins-official": true,
     "superpowers@claude-plugins-official": false,
     "pyright-lsp@claude-plugins-official": false,
-    "figma@claude-plugins-official": true
+    "figma@claude-plugins-official": true,
+    "jdtls-lsp@claude-plugins-official": true,
+    "core-x-ds-plugin@core-x-ds-claude-marketplace": true,
+    "core-x-ds-tools-plugin@core-x-ds-claude-marketplace": true
   },
   "extraKnownMarketplaces": {
     "claude-plugins-official": {
@@ -61,9 +64,16 @@
         "source": "git",
         "url": "git@github.com:anthropics/claude-plugins-official.git"
       }
+    },
+    "core-x-ds-claude-marketplace": {
+      "source": {
+        "source": "git",
+        "url": "https://ghe.spotify.net/core-x-insights/core-x-ds-claude-resources.git"
+      }
     }
   },
-  "effortLevel": "medium",
+  "effortLevel": "high",
+  "tui": "fullscreen",
   "skipDangerousModePermissionPrompt": true,
   "skipAutoPermissionPrompt": true
 }

@@ -60,3 +60,5 @@ tags
 .dotfiles_env
 .zshrc.local
 .secrets
+
+**/.claude/settings.local.json

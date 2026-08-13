@@ -54,3 +54,5 @@
 	locksverify = false
 [maintenance]
 	repo = /Users/yahiae/src/services-pilot
+[init]
+	defaultBranch = master

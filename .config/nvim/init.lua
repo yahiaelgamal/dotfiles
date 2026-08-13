@@ -277,6 +277,35 @@ require("lazy").setup({
     },
   },
 
+  -- Git links to GHE
+  {
+    "linrongbin16/gitlinker.nvim",
+    keys = {
+      { "<leader>gy", function() require("gitlinker").link({ action = require("gitlinker.actions").clipboard }) end, mode = { "n", "v" }, desc = "Copy GHE link" },
+      { "<leader>gY", function() require("gitlinker").link({ action = require("gitlinker.actions").system }) end, mode = { "n", "v" }, desc = "Open in GHE" },
+    },
+    opts = {
+      router = {
+        browse = {
+          ["^ghe%.spotify%.net"] = function(lk)
+            local repo = lk.repo:gsub("%.git$", "")
+            local url = string.format(
+              "https://ghe.spotify.net/%s/%s/blob/%s/%s",
+              lk.org, repo, lk.rev, lk.file
+            )
+            if lk.lstart then
+              url = url .. string.format("#L%d", lk.lstart)
+              if lk.lend and lk.lend > lk.lstart then
+                url = url .. string.format("-L%d", lk.lend)
+              end
+            end
+            return url
+          end,
+        },
+      },
+    },
+  },
+
   -- Surround (replaces vim-surround)
   { "kylechui/nvim-surround", event = "VeryLazy", opts = {} },
 
