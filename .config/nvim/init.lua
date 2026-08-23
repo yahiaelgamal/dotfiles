@@ -355,6 +355,13 @@ require("lazy").setup({
       vim.lsp.config('pyright', {})
       vim.lsp.enable('pyright')
 
+      vim.lsp.config('sourcekit', {
+        cmd = { "sourcekit-lsp" },
+        filetypes = { "swift", "objective-c", "objective-cpp" },
+        root_markers = { "Package.swift", ".git" },
+      })
+      vim.lsp.enable('sourcekit')
+
       -- map("n", "<leader>jd", vim.lsp.buf.definition)
       -- map("n", "<leader>h", vim.lsp.buf.hover)
       -- map("n", "<leader>rn", vim.lsp.buf.rename)
