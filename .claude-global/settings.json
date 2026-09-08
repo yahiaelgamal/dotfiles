@@ -63,8 +63,8 @@
     "pyright-lsp@claude-plugins-official": false,
     "figma@claude-plugins-official": true,
     "jdtls-lsp@claude-plugins-official": true,
-    "swift-lsp@claude-plugins-official": true, 
-    // work 
+    "swift-lsp@claude-plugins-official": true,
+    "_comment": "work",
     "core-x-ds-plugin@core-x-ds-claude-marketplace": true,
     "core-x-ds-tools-plugin@core-x-ds-claude-marketplace": true
   },
