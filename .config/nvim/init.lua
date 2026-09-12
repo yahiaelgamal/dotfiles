@@ -38,7 +38,7 @@ vim.opt.splitbelow = true
 vim.opt.autowrite = true
 vim.opt.autoread = true
 vim.opt.wildmenu = true
-vim.opt.clipboard = "unnamed"
+vim.opt.clipboard = ""
 
 vim.opt.timeout = true
 vim.opt.timeoutlen = 400
