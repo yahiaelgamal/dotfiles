@@ -40,6 +40,9 @@ vim.opt.autoread = true
 vim.opt.wildmenu = true
 vim.opt.clipboard = ""
 
+vim.keymap.set({'n', 'v'}, 'y', '"+y')
+vim.keymap.set('n', 'yy', '"+yy')
+
 vim.opt.timeout = true
 vim.opt.timeoutlen = 400
 vim.opt.ttimeoutlen = 50

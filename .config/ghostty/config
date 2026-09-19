@@ -3,3 +3,4 @@ keybind = alt+left=esc:b
 keybind = alt+right=esc:f
 keybind = alt+backspace=text:\x1b\x7f
 keybind = super+v=paste_from_clipboard
+keybind = option+backspace=text:\x1b\x7f

@@ -71,3 +71,11 @@ fi
 
 export PATH="$HOME/.local/bin:$PATH"
 export PATH=/opt/spotify-devex/bin:$PATH
+
+unset PIP_INDEX_URL
+unset PIP_EXTRA_INDEX_URL
+unset PIPENV_PYPI_MIRROR
+unset UV_DEFAULT_INDEX
+unset YARN_NPM_REGISTRY_SERVER
+unset YARN_REGISTRY
+unset NPM_CONFIG_REGISTRY
