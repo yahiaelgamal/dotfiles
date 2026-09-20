@@ -102,6 +102,9 @@ map("n", "dd", '"_dd')
 map("n", "D", '"_D')
 map("n", "x", '"_x')
 map("n", "X", '"_X')
+map("v", "d", '"_d')
+map("v", "x", '"_x')
+map("v", "p", '"_dP')
 
 -- Don't lowercase in visual mode
 map("v", "u", "<NOP>")
